@@ -39,8 +39,7 @@ namespace WebServer
         //{
 
         //}
-
-        //Test
+//Mal sehen obs gehts :)
 
         public void handleGETRequest()
         {
