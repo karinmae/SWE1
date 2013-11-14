@@ -23,31 +23,39 @@ namespace SensorCloud
         }
         private void InsertTempValue(int Wert)
         {
-            try
-            {
+            //try
+            //{
                 string strCon = @"Data Source=.\sqlexpress;" + "Initial Catalog=TempSensor;Integrated Security=true;";
-                SqlConnection con = new SqlConnection(strCon);
-                Console.WriteLine("Connected to TempSensor");
-                SqlCommand cmdSelect = new SqlCommand("SELECT * FROM TempSensor", con);
-                SqlCommand cmdInsert = new SqlCommand("INSERT INTO TempSensor (Wert) VALUES(@Wert)", con);
-                cmdInsert.Parameters.AddWithValue("@Wert", 100);
-                cmdInsert.ExecuteNonQuery();
-                SqlDataAdapter da = new SqlDataAdapter();
-                da.SelectCommand = cmdSelect;
-                DataTable tbl = new DataTable();
-                da.Fill(tbl);
+                using (SqlConnection db = new SqlConnection(strCon))
+                 {    
+                    db.Open();
+                    Console.WriteLine("Connected to TempSensor");
+                    Console.WriteLine("---");
+                    //SQL Statement zum auslesen
+                    SqlCommand cmdSelect = new SqlCommand("SELECT Temperatur, Datum FROM TempSensor ORDER BY [Datum]", db);
 
-                for (int i = 0; i < tbl.Rows.Count; i++)
-                {
-                    DataRow row = tbl.Rows[i];
-                    Console.WriteLine("{0} ", row[0]);
-                }
-                
+                    using (SqlDataReader rd = cmdSelect.ExecuteReader())
+                    {
+                        // Daten holen
+                        while (rd.Read())
+                        {
+                            Console.WriteLine("Temperatur: {0}°C \nDatum: {1}",
+                            rd["Temperatur"], rd["Datum"]);
+                            Console.WriteLine("----");
+                        }
+                        // DataReader schließen 
+                        rd.Close();
+                    }
+
+                    // Verbindung schließen 
+                    db.Close(); 
             }
-            catch (Exception e)
-            {
-                Console.WriteLine("Connection to TempSensor failed");
-            }
+
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine("Connection to TempSensor failed");
+            //}
         }
     }
 }
