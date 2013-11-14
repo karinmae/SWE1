@@ -25,3 +25,6 @@ C:\git\SWE\WebServer\WebServer\bin\Debug\SensorCloud.pdb
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE\WebServer\WebServer\bin\Debug\WebServer.exe.config
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE\WebServer\WebServer\obj\Debug\WebServer.exe
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE\WebServer\WebServer\obj\Debug\WebServer.pdb
+C:\git\SWE1\WebServer\WebServer\bin\Debug\WebServer.exe.config
+C:\git\SWE1\WebServer\WebServer\obj\Debug\WebServer.exe
+C:\git\SWE1\WebServer\WebServer\obj\Debug\WebServer.pdb
