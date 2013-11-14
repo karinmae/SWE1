@@ -1,0 +1,27 @@
+c:\users\tplac_000\documents\visual studio 2012\Projects\WebServer\WebServer\bin\Debug\WebServer.exe.config
+c:\users\tplac_000\documents\visual studio 2012\Projects\WebServer\WebServer\obj\Debug\WebServer.csprojResolveAssemblyReference.cache
+c:\users\tplac_000\documents\visual studio 2012\Projects\WebServer\WebServer\bin\Debug\WebServer.exe
+c:\users\tplac_000\documents\visual studio 2012\Projects\WebServer\WebServer\bin\Debug\WebServer.pdb
+c:\users\tplac_000\documents\visual studio 2012\Projects\WebServer\WebServer\obj\Debug\WebServer.exe
+c:\users\tplac_000\documents\visual studio 2012\Projects\WebServer\WebServer\obj\Debug\WebServer.pdb
+C:\Users\tplac_000\documents\visual studio 2012\Projects\WebServer\WebServer\bin\Debug\SensorCloud.dll
+C:\Users\tplac_000\documents\visual studio 2012\Projects\WebServer\WebServer\bin\Debug\SensorCloud.pdb
+D:\FH\3.Semester\Software Engineering\WebServer_3\WebServer\bin\Debug\WebServer.exe.config
+D:\FH\3.Semester\Software Engineering\WebServer_3\WebServer\obj\Debug\WebServer.exe
+D:\FH\3.Semester\Software Engineering\WebServer_3\WebServer\obj\Debug\WebServer.pdb
+D:\FH\3.Semester\Software Engineering\WebServer_3\WebServer\bin\Debug\WebServer.exe
+D:\FH\3.Semester\Software Engineering\WebServer_3\WebServer\bin\Debug\WebServer.pdb
+D:\FH\3.Semester\Software Engineering\WebServer_3\WebServer\bin\Debug\SensorCloud.dll
+D:\FH\3.Semester\Software Engineering\WebServer_3\WebServer\bin\Debug\SensorCloud.pdb
+D:\FH\3.Semester\Software Engineering\WebServer_3\WebServer\obj\Debug\WebServer.csprojResolveAssemblyReference.cache
+C:\git\SWE\WebServer\WebServer\bin\Debug\WebServer.exe.config
+C:\git\SWE\WebServer\WebServer\obj\Debug\WebServer.exe
+C:\git\SWE\WebServer\WebServer\obj\Debug\WebServer.pdb
+C:\git\SWE\WebServer\WebServer\obj\Debug\WebServer.csprojResolveAssemblyReference.cache
+C:\git\SWE\WebServer\WebServer\bin\Debug\WebServer.exe
+C:\git\SWE\WebServer\WebServer\bin\Debug\WebServer.pdb
+C:\git\SWE\WebServer\WebServer\bin\Debug\SensorCloud.dll
+C:\git\SWE\WebServer\WebServer\bin\Debug\SensorCloud.pdb
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE\WebServer\WebServer\bin\Debug\WebServer.exe.config
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE\WebServer\WebServer\obj\Debug\WebServer.exe
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE\WebServer\WebServer\obj\Debug\WebServer.pdb

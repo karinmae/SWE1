@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServer", "WebServer\WebServer.csproj", "{4E492DCF-E6F1-4CD4-901A-FCF610DDBFF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interface", "SensorCloud\Interface.csproj", "{625ED3CA-C354-49FE-82D6-26F801F35FBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempSensor", "TempSensor\TempSensor.csproj", "{EA46EBE6-5E9D-4DA0-BC9A-A76AEAF1425A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E492DCF-E6F1-4CD4-901A-FCF610DDBFF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E492DCF-E6F1-4CD4-901A-FCF610DDBFF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E492DCF-E6F1-4CD4-901A-FCF610DDBFF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E492DCF-E6F1-4CD4-901A-FCF610DDBFF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{625ED3CA-C354-49FE-82D6-26F801F35FBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{625ED3CA-C354-49FE-82D6-26F801F35FBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{625ED3CA-C354-49FE-82D6-26F801F35FBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{625ED3CA-C354-49FE-82D6-26F801F35FBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA46EBE6-5E9D-4DA0-BC9A-A76AEAF1425A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA46EBE6-5E9D-4DA0-BC9A-A76AEAF1425A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA46EBE6-5E9D-4DA0-BC9A-A76AEAF1425A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA46EBE6-5E9D-4DA0-BC9A-A76AEAF1425A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

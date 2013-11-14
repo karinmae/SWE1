@@ -1,0 +1,14 @@
+C:\Users\tplac_000\documents\visual studio 2012\Projects\WebServer\TempSensor\bin\Debug\TempSensor.dll
+C:\Users\tplac_000\documents\visual studio 2012\Projects\WebServer\TempSensor\bin\Debug\TempSensor.pdb
+C:\Users\tplac_000\documents\visual studio 2012\Projects\WebServer\TempSensor\bin\Debug\SensorCloud.dll
+C:\Users\tplac_000\documents\visual studio 2012\Projects\WebServer\TempSensor\bin\Debug\SensorCloud.pdb
+C:\Users\tplac_000\documents\visual studio 2012\Projects\WebServer\TempSensor\obj\Debug\TempSensor.dll
+C:\Users\tplac_000\documents\visual studio 2012\Projects\WebServer\TempSensor\obj\Debug\TempSensor.pdb
+C:\Users\tplac_000\documents\visual studio 2012\Projects\WebServer\TempSensor\obj\Debug\TempSensor.csprojResolveAssemblyReference.cache
+D:\FH\3.Semester\Software Engineering\WebServer_3\TempSensor\bin\Debug\TempSensor.dll
+D:\FH\3.Semester\Software Engineering\WebServer_3\TempSensor\bin\Debug\TempSensor.pdb
+D:\FH\3.Semester\Software Engineering\WebServer_3\TempSensor\bin\Debug\SensorCloud.dll
+D:\FH\3.Semester\Software Engineering\WebServer_3\TempSensor\bin\Debug\SensorCloud.pdb
+D:\FH\3.Semester\Software Engineering\WebServer_3\TempSensor\obj\Debug\TempSensor.csprojResolveAssemblyReference.cache
+D:\FH\3.Semester\Software Engineering\WebServer_3\TempSensor\obj\Debug\TempSensor.dll
+D:\FH\3.Semester\Software Engineering\WebServer_3\TempSensor\obj\Debug\TempSensor.pdb
