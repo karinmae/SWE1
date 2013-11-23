@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Interface
 {
-    public interface ISensorCloud
+     public interface ISensorCloud
     {
         void Register();
         void ReadTemperature();
@@ -14,6 +14,6 @@ namespace Interface
 
     public interface IStaticFiles
     {
-
+        void Files();
     }
 }

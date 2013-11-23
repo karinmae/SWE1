@@ -12,9 +12,11 @@ namespace WebServer
     {
         public PluginManager()
         {
+            
+            //Wenn /SensorCloud dann... wobei ich glaub es soll "getTemperature" sein...
             //Plugins
             List<Interface.ISensorCloud> plugins = new List<Interface.ISensorCloud>();
-
+            
             //In der Schleife wird der Ordner mit den dlls durchsucht
             foreach (var filename in System.IO.Directory.GetFiles(".\\plugins", "*.dll"))
             {
@@ -32,8 +34,16 @@ namespace WebServer
 
             foreach (var plugin in plugins)
             {
+                plugin.ReadTemperature();
                 plugin.Register();
+
             }
+
+            //Wenn /StaticFile dann...
+
+            //Wenn /Navi dann..
+
+            //Wenn "Eigenes Plugin" dann...
         }
     }
 }

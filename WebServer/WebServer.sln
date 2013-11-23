@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorCloud", "SensorCloud\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interface", "Interface\Interface.csproj", "{68621FD8-8630-4A85-9765-71C3CDB489A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticFiles", "StaticFiles\StaticFiles.csproj", "{907EF586-808B-4C6E-A2C4-71B7EBF06AD1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{68621FD8-8630-4A85-9765-71C3CDB489A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68621FD8-8630-4A85-9765-71C3CDB489A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68621FD8-8630-4A85-9765-71C3CDB489A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{907EF586-808B-4C6E-A2C4-71B7EBF06AD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{907EF586-808B-4C6E-A2C4-71B7EBF06AD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{907EF586-808B-4C6E-A2C4-71B7EBF06AD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{907EF586-808B-4C6E-A2C4-71B7EBF06AD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

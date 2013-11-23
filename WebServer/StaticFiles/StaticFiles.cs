@@ -8,6 +8,9 @@ namespace StaticFiles
 {
     public class StaticFiles : Interface.IStaticFiles
     {
-
+        public void Files()
+        {
+            Console.WriteLine("Static Files Plugin loaded");
+        }
     }
 }
