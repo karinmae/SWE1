@@ -9,6 +9,11 @@ namespace Interface
     public interface ISensorCloud
     {
         void Register();
-        //void sqlCon();
+        void ReadTemperature();
+    }
+
+    public interface IStaticFiles
+    {
+
     }
 }
