@@ -8,23 +8,21 @@ using System.Data;
 
 namespace SensorCloud
 {
-    public class Temp : IPlugin
-    {
-        //private string  strSQL = "SELECT * FROM TempSensor";
-        
+    public class SensorCloud : Interface.ISensorCloud
+    {    
         public void Register()
         {
             //Console.WriteLine("Ich bin ein Plugin ^_^");
 
             Random Rnd = new Random();
             int Wert = Rnd.Next(50);
-            InsertTempValue(Wert);
+            ReadTempValue(Wert);
 
         }
-        private void InsertTempValue(int Wert)
+        private void ReadTempValue(int Wert)
         {
-            //try
-            //{
+            try
+            {
                 string strCon = @"Data Source=.\sqlexpress;" + "Initial Catalog=TempSensor;Integrated Security=true;";
                 using (SqlConnection db = new SqlConnection(strCon))
                  {    
@@ -51,11 +49,21 @@ namespace SensorCloud
                     db.Close(); 
             }
 
-            //}
-            //catch (Exception e)
-            //{
-            //    Console.WriteLine("Connection to TempSensor failed");
-            //}
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Connection to TempSensor failed");
+            }
+        }
+
+        public void ReadTemperature()
+        {
+            Console.WriteLine("Start reading Temperature...");
+
+        }
+
+        private void ListTemp()
+        { 
         }
     }
 }

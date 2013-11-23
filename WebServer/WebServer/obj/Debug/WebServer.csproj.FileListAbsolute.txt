@@ -31,5 +31,12 @@ C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE\WebServer\WebServer
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE\WebServer\WebServer\bin\Debug\SensorCloud.pdb
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE\WebServer\WebServer\obj\Debug\WebServer.csprojResolveAssemblyReference.cache
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebServer\bin\Debug\WebServer.exe.config
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebServer\bin\Debug\WebServer.exe
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebServer\bin\Debug\WebServer.pdb
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebServer\bin\Debug\Interface.dll
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebServer\bin\Debug\Interface.pdb
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebServer\obj\Debug\WebServer.csprojResolveAssemblyReference.cache
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebServer\obj\Debug\WebServer.exe
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebServer\obj\Debug\WebServer.pdb
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebServer\bin\Debug\SensorCloud.dll
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebServer\bin\Debug\SensorCloud.pdb

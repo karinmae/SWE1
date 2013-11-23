@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SensorCloud
+namespace Interface
 {
-    public interface IPlugin
+    public interface ISensorCloud
     {
         void Register();
         //void sqlCon();

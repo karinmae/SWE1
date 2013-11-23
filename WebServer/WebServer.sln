@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServer", "WebServer\WebServer.csproj", "{4E492DCF-E6F1-4CD4-901A-FCF610DDBFF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interface", "SensorCloud\Interface.csproj", "{625ED3CA-C354-49FE-82D6-26F801F35FBC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorCloud", "SensorCloud\SensorCloud.csproj", "{1C82F06C-E602-4FE9-B8E6-3B50F466E9A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempSensor", "TempSensor\TempSensor.csproj", "{EA46EBE6-5E9D-4DA0-BC9A-A76AEAF1425A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interface", "Interface\Interface.csproj", "{68621FD8-8630-4A85-9765-71C3CDB489A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,14 +17,14 @@ Global
 		{4E492DCF-E6F1-4CD4-901A-FCF610DDBFF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E492DCF-E6F1-4CD4-901A-FCF610DDBFF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E492DCF-E6F1-4CD4-901A-FCF610DDBFF1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{625ED3CA-C354-49FE-82D6-26F801F35FBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{625ED3CA-C354-49FE-82D6-26F801F35FBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{625ED3CA-C354-49FE-82D6-26F801F35FBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{625ED3CA-C354-49FE-82D6-26F801F35FBC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EA46EBE6-5E9D-4DA0-BC9A-A76AEAF1425A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EA46EBE6-5E9D-4DA0-BC9A-A76AEAF1425A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EA46EBE6-5E9D-4DA0-BC9A-A76AEAF1425A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EA46EBE6-5E9D-4DA0-BC9A-A76AEAF1425A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C82F06C-E602-4FE9-B8E6-3B50F466E9A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C82F06C-E602-4FE9-B8E6-3B50F466E9A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C82F06C-E602-4FE9-B8E6-3B50F466E9A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C82F06C-E602-4FE9-B8E6-3B50F466E9A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68621FD8-8630-4A85-9765-71C3CDB489A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68621FD8-8630-4A85-9765-71C3CDB489A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68621FD8-8630-4A85-9765-71C3CDB489A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68621FD8-8630-4A85-9765-71C3CDB489A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

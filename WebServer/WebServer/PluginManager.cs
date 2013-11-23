@@ -13,7 +13,7 @@ namespace WebServer
         public PluginManager()
         {
             //Plugins
-            List<IPlugin> plugins = new List<IPlugin>();
+            List<Interface.ISensorCloud> plugins = new List<Interface.ISensorCloud>();
 
             //In der Schleife wird der Ordner mit den dlls durchsucht
             foreach (var filename in System.IO.Directory.GetFiles(".\\plugins", "*.dll"))
@@ -21,10 +21,10 @@ namespace WebServer
 
                 Assembly myDll = Assembly.LoadFrom(filename);
 
-                var types = myDll.GetTypes().Where(t => typeof(SensorCloud.IPlugin).IsAssignableFrom(t));
+                var types = myDll.GetTypes().Where(t => typeof(Interface.ISensorCloud).IsAssignableFrom(t));
                 foreach (var type in types)
                 {
-                    var obj = (IPlugin)Activator.CreateInstance(type);
+                    var obj = (Interface.ISensorCloud)Activator.CreateInstance(type);
                     plugins.Add(obj);
                 }
             }
