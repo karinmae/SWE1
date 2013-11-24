@@ -8,7 +8,7 @@ namespace Interface
 {
      public interface ISensorCloud
     {
-        void Register();
+        void getTemperature();
         void ReadTemperature();
     }
 

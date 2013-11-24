@@ -35,7 +35,7 @@ namespace WebServer
             foreach (var plugin in plugins)
             {
                 plugin.ReadTemperature();
-                plugin.Register();
+                plugin.getTemperature();
 
             }
 

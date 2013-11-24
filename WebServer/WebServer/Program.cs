@@ -12,8 +12,8 @@ namespace WebServer
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Starting in " + System.Environment.CurrentDirectory);
-
+            Console.WriteLine("Starting in: \n " + System.Environment.CurrentDirectory);
+            Console.WriteLine("--------------------------------------------------------------------------------");
             PluginManager newPlugin = new PluginManager();
 
             ////Plugins
