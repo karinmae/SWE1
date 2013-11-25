@@ -32,7 +32,16 @@ namespace WebServer
             {
                 //handleGETRequest();
                 Url u = new Url(http_url);
-                Console.WriteLine("Ganze URL aus URL Klasse:" + u.getFullUrl());
+               // Console.WriteLine("Ganze URL aus URL Klasse:" + u.getFullUrl());
+               //Test split URl:
+                //foreach (string o in u.getSplitUrl())
+                //{
+
+                //    Console.WriteLine(o);
+
+                //}
+
+              
             }
             else if (http_method=="POST")
             {
@@ -83,30 +92,6 @@ namespace WebServer
                 httpHeaders[name] = value;
             }
         }
-
-        //private void handleGETRequest()
-        //{
-        //    //Console.WriteLine("GET");
-        //    //erstes '/' abschnieden
-        //    http_url = http_url.Substring(1);
-        //    string[] split = Regex.Split(http_url, "/");
-        //    //böses favicon
-        //    bool favicon = http_url.StartsWith("favicon.ico", System.StringComparison.CurrentCultureIgnoreCase);
-        //    if (favicon == false)
-        //    {
-        //        bool Temp = http_url.StartsWith("Temp", System.StringComparison.CurrentCultureIgnoreCase);
-        //        if (Temp == true)
-        //        {
-        //            string plugin = "Temp";
-        //            //PluginManager Temp = new PluginManager(plugin);
-        //        }
-        //        Console.WriteLine("Got this:");
-        //        foreach (var o in split)
-        //        {
-        //            Console.WriteLine(o);
-        //         }
-        //    }
-        //}
 
         //private const int BUF_SIZE = 4096;
         //private static int MAX_POST_SIZE = 10 * 1024 * 1024; // 10MB

@@ -14,6 +14,8 @@ namespace WebServer
         {
             
             //Wenn /SensorCloud dann... wobei ich glaub es soll "getTemperature" sein...
+
+
             //Plugins
             List<Interface.ISensorCloud> plugins = new List<Interface.ISensorCloud>();
             

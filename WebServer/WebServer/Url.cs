@@ -10,8 +10,9 @@ namespace WebServer
     class Url
     {
         private String FullUrl;
+        private String PluginName; 
         private String new_http_url;
-       // private string[] SplitUrl;
+        private String[] SplitUrl;
 
         public Url(String http_url)
         {
@@ -30,15 +31,15 @@ namespace WebServer
             FullUrl = Url;
         }
 
-        //public String getSplitUrl()
-        //{ 
-        //    return string[] SplitUrl;
-        //}
+        public string[] getSplitUrl()
+        { 
+            return SplitUrl;
+        }
 
-        //public void setSplitUrl(String SpUrl)
-        //{
-
-        //}
+        public String getPluginName() 
+        {
+            return PluginName;
+        }
 //Mal sehen obs gehts :)
 
         public void handleGETRequest()
@@ -57,16 +58,22 @@ namespace WebServer
                     string plugin = "Temp";
                     //PluginManager Temp = new PluginManager(plugin);
                 }
-                //string plugin_type = split[0];
+                PluginName = split[0];
                 //string year = split[1];
                 //string month = split[2];
                 //string day = split[3];
 
+                //copy the split Array into the SplitUrl array 
+                SplitUrl = new string[split.Length];
+                split.CopyTo(SplitUrl, 0); 
+
                 Console.WriteLine("Got this:");
-                foreach (var o in split)
+               
+                foreach (string o in SplitUrl)
                 {
                     
                     Console.WriteLine(o);
+        
                 }
             }
         }
