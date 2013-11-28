@@ -7,7 +7,7 @@
     <ProjectGuid>{1C82F06C-E602-4FE9-B8E6-3B50F466E9A1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SensorCloud</RootNamespace>
+    <RootNamespace>Interface</RootNamespace>
     <AssemblyName>SensorCloud</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddValues.cs" />
+    <Compile Include="ReadSensor.cs" />
     <Compile Include="SensorCloud.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -47,6 +47,10 @@
     <ProjectReference Include="..\Interface\Interface.csproj">
       <Project>{68621fd8-8630-4a85-9765-71c3cdb489a4}</Project>
       <Name>Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebLibrary\WebLibrary.csproj">
+      <Project>{020b6672-92de-4f4b-a91f-cc6a9d24618d}</Project>
+      <Name>WebLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

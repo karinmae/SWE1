@@ -8,6 +8,7 @@ using System.Net;
 using System.Threading;
 using System.Text.RegularExpressions;
 using System.IO;
+using WebLibrary;
 
 namespace WebServer
 {
@@ -16,17 +17,19 @@ namespace WebServer
 
         private TcpListener Listener;
         private Thread listenThread;
-        
+        private PluginManager plugin;
+
         //Basic Settings
         private int port = 8080;
         private IPAddress localAddr = IPAddress.Any;
         int Threadcount = 0;
 
-        public Server()
+        public Server(ref PluginManager pm)
         {
             Listener = new TcpListener(localAddr, port);
             listenThread = new Thread(new ThreadStart(ListenForClients));
             listenThread.Start();
+            plugin = pm;
         }
 
         private void ListenForClients()
@@ -40,13 +43,13 @@ namespace WebServer
                 //neuer Client gefunden
                 TcpClient client = Listener.AcceptTcpClient();
                 Console.WriteLine("____________________________");
-                Console.WriteLine("Client found <3");
+                Console.WriteLine("Client found");
 
                 //Thread erstellen
                 Thread clientThread = new Thread(new ParameterizedThreadStart(ClientComm));
                 clientThread.Start(client);
                 ++Threadcount;
-                Console.WriteLine("Let's do some Magic...~* Creating Thread No. {0} *~", Threadcount);
+                Console.WriteLine("Creating Thread No. {0} *~", Threadcount);
             }
 
         }
@@ -65,10 +68,14 @@ namespace WebServer
                             if (tcpClient.Available == 0) break;
 
                             //Einlesen
+                            Url theNew = new Url();
                             Request neuerReader = new Request(clientStream);
+                            theNew = (Url)neuerReader.getURL();
+                            string pluginName = theNew.getPluginName();
+                            //Console.WriteLine("PluginName: {0}", pluginName);
                             
                             //Nachricht an Client
-                            Response neuerWriter = new Response(clientStream);
+                            Response neuerWriter = new Response(clientStream, theNew);
 
                             Console.WriteLine("No. {0} disconnected *~ ", Threadcount);
                             Console.WriteLine("____________________________");

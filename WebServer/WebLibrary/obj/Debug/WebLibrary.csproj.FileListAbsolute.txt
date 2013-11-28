@@ -1,0 +1,4 @@
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebLibrary\bin\Debug\WebLibrary.dll
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebLibrary\bin\Debug\WebLibrary.pdb
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebLibrary\obj\Debug\WebLibrary.dll
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebLibrary\obj\Debug\WebLibrary.pdb

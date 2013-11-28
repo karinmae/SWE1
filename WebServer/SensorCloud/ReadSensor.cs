@@ -8,9 +8,9 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Timers;
 
-namespace SensorCloud
+namespace Interface
 {
-    class AddValues
+    class ReadSensor
     {
         private string strCon = @"Data Source=.\sqlexpress;" + "Initial Catalog=TempSensor;Integrated Security=true;";
         private static System.Timers.Timer aTimer;

@@ -7,21 +7,32 @@ using System.Threading;
 using System.Data.SqlClient;
 using System.Data;
 using System.Timers;
+using WebLibrary;
 
-namespace SensorCloud
+namespace Interface
 {
-    public class SensorCloud : Interface.ISensorCloud
+    public class SensorCloud : IPlugin
     {    
         //Datenbankverbindung
         private string strCon = @"Data Source=.\sqlexpress;" + "Initial Catalog=TempSensor;Integrated Security=true;";
 
-        public void getTemperature()
+        public void start()
         {
             // wirklich viel steht hier ned x_X
             ReadTempValue();
+            ReadSensor ReadSensor = new ReadSensor();
+            ReadSensor.Start();
 
         }
-        
+        public string getName()
+        {
+            return "SensorCloud";
+        }
+
+        public void handleRequest(Url url)
+        {
+            Console.WriteLine("SensorCloud: handleRequest");
+         }
         //Auslesen der Datenbank
         private void ReadTempValue()
         {
@@ -58,54 +69,5 @@ namespace SensorCloud
             }
         }
 
-
-        public void ReadTemperature()
-        {
-            AddValues newAdd = new AddValues();
-            newAdd.Start();
-        }
-
-    //    private void WorkThread()
-    //    {
-    //        // ~* Timer Starten *~
-    //        aTimer = new System.Timers.Timer(10000);
-    //        aTimer.Elapsed += new ElapsedEventHandler(AddTemperature);
-
-    //        //Intervall auf 2 Minuten setzen (120000)
-    //        aTimer.Interval = 120000;
-    //        aTimer.Enabled = true;
-    //        GC.KeepAlive(aTimer);
-    //    }     
-
-    //    //Werte zur Datenbank hinzufügen
-    //    private void AddTemperature(object source, ElapsedEventArgs e)
-    //    {
-    //        //Zufallswert "Temperatur" erstellen
-    //        Random Rnd = new Random();
-    //        int Wert = Rnd.Next(-50,50);
-
-    //        //String für SQL
-    //        string cmdInsert = "INSERT INTO TempSensor (Temperatur, Datum) VALUES (@Temperatur, CURRENT_TIMESTAMP)";
-
-    //        try
-    //        {
-    //            using (SqlConnection db = new SqlConnection(strCon))
-    //            {
-    //                db.Open();
-    //                // SQL STMT vorbereiten
-    //                SqlCommand cmd = new SqlCommand(cmdInsert, db);
-    //                // Parameter setzen
-    //                cmd.Parameters.AddWithValue("@Temperatur", Wert);
-    //                // Ausführen, rows enthält die Anzahl der betroffenen Zeilen
-    //                int rows = cmd.ExecuteNonQuery();
-    //                Console.WriteLine("~* Temperatur Wert der Datenbank hinzugefügt. *~");
-    //                db.Close();
-    //            }
-    //        }
-    //        catch (Exception)
-    //        {
-    //            Console.WriteLine("Connection to SensorCloud_DB failed");
-    //        }
-    //    }
     }
 }

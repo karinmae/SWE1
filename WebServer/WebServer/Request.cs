@@ -9,6 +9,7 @@ using System.Threading;
 using System.Text.RegularExpressions;
 using System.IO;
 using System.Collections;
+using WebLibrary;
 
 
 namespace WebServer
@@ -20,6 +21,14 @@ namespace WebServer
         private NetworkStream stream;
         //private String[,] httpHeaders;
         public Hashtable httpHeaders = new Hashtable();
+        private String[] SplitUrl;
+        public Url theUrl = new Url();
+
+        public object getURL()
+        {
+            return theUrl;
+        }
+
 
         public Request(object clientStream)
         {
@@ -30,18 +39,7 @@ namespace WebServer
             readHeaders(sr);
             if (http_method=="GET")
             {
-                //handleGETRequest();
-                Url u = new Url(http_url);
-               // Console.WriteLine("Ganze URL aus URL Klasse:" + u.getFullUrl());
-               //Test split URl:
-                //foreach (string o in u.getSplitUrl())
-                //{
-
-                //    Console.WriteLine(o);
-
-                //}
-
-              
+                handleGETRequest();             
             }
             else if (http_method=="POST")
             {
@@ -69,7 +67,7 @@ namespace WebServer
             {
                 if (line.Equals(""))
                 {
-                    Console.WriteLine("Got headers ^_^");
+                    Console.WriteLine("Got headers");
                     return;
                 }
                 int separator = line.IndexOf(':');
@@ -90,6 +88,37 @@ namespace WebServer
                 //Console.WriteLine("header: {0}:{1}\n", name, value);
                 //string[,] httpHeaders = new string[,] {{name, value}};
                 httpHeaders[name] = value;
+            }
+        }
+
+
+        public void handleGETRequest()
+        {
+            //Console.WriteLine("GET");
+            //erstes '/' abschnieden
+            http_url = http_url.Substring(1);
+            string[] split = Regex.Split(http_url, "/");
+            //böses favicon
+            bool favicon = http_url.StartsWith("favicon.ico", System.StringComparison.CurrentCultureIgnoreCase);
+            if (favicon == false)
+            {
+                theUrl.setFullUrl(http_url);
+                theUrl.setPluginName(split[0]);
+
+                //copy the split Array into the SplitUrl array 
+                SplitUrl = new string[split.Length];
+                split.CopyTo(SplitUrl, 0);
+                theUrl.setSplitUrl(SplitUrl);
+                Console.WriteLine("Got this:");
+
+                foreach (string o in SplitUrl)
+                {
+                    Console.WriteLine(o);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Favicon!");
             }
         }
 

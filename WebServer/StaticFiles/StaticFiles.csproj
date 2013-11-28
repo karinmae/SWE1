@@ -7,7 +7,7 @@
     <ProjectGuid>{907EF586-808B-4C6E-A2C4-71B7EBF06AD1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>StaticFiles</RootNamespace>
+    <RootNamespace>Interface</RootNamespace>
     <AssemblyName>StaticFiles</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -46,6 +46,10 @@
     <ProjectReference Include="..\Interface\Interface.csproj">
       <Project>{68621fd8-8630-4a85-9765-71c3cdb489a4}</Project>
       <Name>Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebLibrary\WebLibrary.csproj">
+      <Project>{020b6672-92de-4f4b-a91f-cc6a9d24618d}</Project>
+      <Name>WebLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

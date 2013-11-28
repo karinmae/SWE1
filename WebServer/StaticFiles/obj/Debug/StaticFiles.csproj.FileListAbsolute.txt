@@ -1,7 +1,11 @@
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebServer\bin\Debug\plugins\StaticFiles.dll
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebServer\bin\Debug\plugins\StaticFiles.pdb
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\StaticFiles\bin\Debug\StaticFiles.dll
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\StaticFiles\bin\Debug\StaticFiles.pdb
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\StaticFiles\bin\Debug\Interface.dll
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\StaticFiles\bin\Debug\WebLibrary.dll
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\StaticFiles\bin\Debug\Interface.pdb
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\StaticFiles\bin\Debug\WebLibrary.pdb
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\StaticFiles\obj\Debug\StaticFiles.csprojResolveAssemblyReference.cache
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\StaticFiles\obj\Debug\StaticFiles.dll
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\StaticFiles\obj\Debug\StaticFiles.pdb

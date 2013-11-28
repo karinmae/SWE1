@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WebLibrary;
 
 namespace Interface
 {
-     public interface ISensorCloud
+    public interface IPlugin
     {
-        void getTemperature();
-        void ReadTemperature();
+        void start();
+        void handleRequest(Url url);
+        string getName();
     }
 
-    public interface IStaticFiles
-    {
-        void Files();
-    }
 }
