@@ -2,6 +2,7 @@ DROP TABLE TempSensor
 
 CREATE TABLE TempSensor
 (
+	id INT IDENTITY NOT NULL PRIMARY KEY ,
 	Temperatur int not null,
 	Datum Date 
 );
@@ -20,3 +21,5 @@ VALUES(-1, '2012-01-01');
 
 INSERT INTO TempSensor
 VALUES(0, '2013-02-12');
+
+SELECT Temperatur, Datum FROM TempSensor WHERE Datum = '2013-02-12' Order by Datum;

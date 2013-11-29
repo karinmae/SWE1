@@ -16,7 +16,13 @@ namespace Interface
 
         public void handleRequest(Url url)
         {
-            Console.WriteLine("Static Files: handleRequest");
+            Url newUrl = new Url();
+            newUrl = (Url)url;
+            string pluginName = newUrl.getPluginName();
+            if (pluginName == "StaticFile")
+            {
+                Console.WriteLine("{0}: handleRequest", pluginName);
+            }
         }
 
         public string getName()

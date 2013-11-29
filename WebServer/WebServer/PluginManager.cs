@@ -49,7 +49,7 @@ namespace WebServer
             }
         }
 
-        public void HandleRequest(Url url, string name = "")
+        public void HandleRequest(Url url) //, string name = ""
         {
             foreach (IPlugin p in plugins)
             {

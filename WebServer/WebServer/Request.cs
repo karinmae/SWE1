@@ -14,7 +14,7 @@ using WebLibrary;
 
 namespace WebServer
 {
-    class Request
+    public class Request
     {
         private String http_method;
         protected String http_url;

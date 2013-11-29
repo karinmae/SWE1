@@ -12,7 +12,7 @@ using WebLibrary;
 
 namespace WebServer
 {
-    class Response
+   public class Response
     {
         private NetworkStream stream;
         public Response(object clientStream, object theUrl)

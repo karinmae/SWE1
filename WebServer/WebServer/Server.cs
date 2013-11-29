@@ -67,11 +67,20 @@ namespace WebServer
                         {
                             if (tcpClient.Available == 0) break;
 
-                            //Einlesen
+                            //Neues URL Objekt
                             Url theNew = new Url();
+                            
+                            //Einlesen
                             Request neuerReader = new Request(clientStream);
+                            
+                            //Objekt vom Reader hole
                             theNew = (Url)neuerReader.getURL();
                             string pluginName = theNew.getPluginName();
+
+                            //An Plugin Manager weiterreichen
+                            if (!String.IsNullOrEmpty(pluginName))
+                            { plugin.HandleRequest(theNew); }
+
                             //Console.WriteLine("PluginName: {0}", pluginName);
                             
                             //Nachricht an Client

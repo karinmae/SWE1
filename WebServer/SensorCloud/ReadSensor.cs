@@ -45,7 +45,7 @@ namespace Interface
             int Wert = Rnd.Next(-50,50);
 
             //String für SQL
-            string cmdInsert = "INSERT INTO TempSensor (Temperatur, Datum) VALUES (@Temperatur, CURRENT_TIMESTAMP)";
+            string cmdInsert = "INSERT INTO TempSensor VALUES (@Temperatur, GETDATE())";
 
             try
             {
