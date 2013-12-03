@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WebServer;
 
-namespace Test_handleGETRequest
+namespace UnitTest
 {
     [TestClass]
     public class handleGETRequest

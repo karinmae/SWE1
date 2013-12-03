@@ -27,7 +27,7 @@ namespace Interface
         public void start()
         {
             // wirklich viel steht hier ned x_X
-            ReadTempValue();
+            //ReadTempValue();
             ReadSensor ReadSensor = new ReadSensor();
             ReadSensor.Start();
 
@@ -41,7 +41,7 @@ namespace Interface
         public void handleRequest(Url url, NetworkStream stream)
         {
             newUrl = (Url)url;
-           // DateTime Date = new DateTime();
+           DateTime Date = new DateTime();
             string Datum;
             clientStream = stream;
             //if (clientStream == null) throw new ArgumentNullException("stream");
@@ -54,9 +54,9 @@ namespace Interface
                 if (split.Length == 4)
                 {
                     Datum = split[3] + '-' + split[2] + '-' + split[1];
-                    //Date = DateTime.Parse(Datum, System.Globalization.CultureInfo.InvariantCulture);
-                    //Console.WriteLine("Date: {0}", Date);
-                    SearchTemp(Datum);
+                    Date = DateTime.Parse(Datum, System.Globalization.CultureInfo.InvariantCulture);
+                    Console.WriteLine("Date: {0}", Date);
+                    SearchTemp(Date);
                 }
                 else
                 {
@@ -104,12 +104,19 @@ namespace Interface
             }
         }
 
-        private void SearchTemp(string Date)
+        private void SearchTemp(DateTime Date)
         {
-            if (clientStream == null) throw new ArgumentNullException("stream");
+            //if (clientStream == null) throw new ArgumentNullException("stream");
             StreamWriter sw = new StreamWriter(clientStream);    
             try
             {
+                sw.WriteLine("HTTP/1.1 200 OK");
+                sw.WriteLine("connection: close");
+                //sw.WriteLine("content-length: 11");
+                sw.WriteLine("content-type: text/xml");
+                sw.WriteLine();
+                sw.WriteLine("<Sensor>");
+                
                 using (SqlConnection db = new SqlConnection(strCon))
                 {
                     db.Open();
@@ -117,16 +124,27 @@ namespace Interface
                     //SQL Statement zum auslesen
                     SqlCommand cmdSelect = new SqlCommand("SELECT Temperatur, Datum FROM TempSensor WHERE [Datum] = @Date Order by Datum;", db);
                     cmdSelect.Parameters.AddWithValue("@Date", Date);
+                    sw.WriteLine("<Datum Day= \"{0}\">", Date);
                     using (SqlDataReader rd = cmdSelect.ExecuteReader())
                     {
                         // Daten holen
                         while (rd.Read())
                         {
-                            Console.WriteLine("Temperatur: {0}°C \nDatum: {1}",
-                            rd["Temperatur"], rd["Datum"]);
-                            Console.WriteLine("----");
+                            //sw.WriteLine("<Datum>");
+                            //sw.WriteLine("{0}", rd["Datum"]);
+                            sw.WriteLine("<Temperatur>");
+                            sw.WriteLine("{0}", rd["Temperatur"]);
+                            sw.WriteLine("</Temperatur>");
+                            
+                            
+                            //Console.WriteLine("Temperatur: {0}°C \nDatum: {1}",
+                            //rd["Temperatur"], rd["Datum"]);
+                            //Console.WriteLine("----");
                         }
                         // DataReader schließen 
+                        sw.WriteLine("</Datum>");
+                        sw.WriteLine("</Sensor>");
+                        sw.Flush();
                         rd.Close();
                     }
 

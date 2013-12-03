@@ -35,10 +35,11 @@ namespace WebServer
                 sw.WriteLine();
                 sw.WriteLine("<html><body><h1>WebServer - SensorCloud</h1>");
                 sw.WriteLine("url : {0}", http_url);
-                sw.WriteLine("<form method=post action=/form>");
-                sw.WriteLine("<input type=text name=date value=Insert Date>");
-                sw.WriteLine("<input type=submit value=los>");
-                sw.WriteLine("</form>");
+                //sw.WriteLine("<form method=post action=/form>");
+                //sw.WriteLine("<input type=text name=date value=Insert Date>");
+                //sw.WriteLine("<input type=submit value=los>");
+                //sw.WriteLine("</form>");
+                sw.WriteLine("<br> Usage: '/day/month/year'");
                 sw.WriteLine("</body></html>");
                 sw.Flush();
             }
@@ -90,10 +91,10 @@ namespace WebServer
                 sw.WriteLine();
                 sw.WriteLine("<html><body><h1>WebServer</h1>");
                 sw.WriteLine("url : {0}", http_url);
-                sw.WriteLine("<form method=post action=/form>");
-                sw.WriteLine("<input type=text name=foo value=foovalue>");
-                sw.WriteLine("<input type=submit name=bar value=los>");
-                sw.WriteLine("</form>");
+                //sw.WriteLine("<form method=post action=/form>");
+                //sw.WriteLine("<input type=text name=foo value=foovalue>");
+                //sw.WriteLine("<input type=submit name=bar value=los>");
+                //sw.WriteLine("</form>");
                 sw.WriteLine("<ul>");
                 sw.WriteLine("<li><a href='http://localhost:8080/getTemperature'>SensorCloud</a></li>");
                 sw.WriteLine("<li><a href='http://localhost:8080/StaticFile'>StaticFile</a></li>");

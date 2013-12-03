@@ -57,7 +57,7 @@ namespace WebServer
         }
         
 
-        private void parseRequest(string data)
+        public void parseRequest(string data)
         {
             String[] tokens = data.Split(' ');
             if (tokens.Length != 3)
