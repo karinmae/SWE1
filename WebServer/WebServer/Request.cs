@@ -21,14 +21,23 @@ namespace WebServer
         private NetworkStream stream;
         //private String[,] httpHeaders;
         public Hashtable httpHeaders = new Hashtable();
-        private String[] SplitUrl;
+        public String[] SplitUrl;
         public Url theUrl = new Url();
+        public bool favicon;
 
+        //für Test ~*
+        public Request(String httpURL)
+        {
+            http_url = httpURL;
+            handleGETRequest();
+        }
+        //~*
+
+        //get für URL Objekt
         public object getURL()
         {
             return theUrl;
         }
-
 
         public Request(object clientStream)
         {
@@ -46,6 +55,7 @@ namespace WebServer
                 handlePOSTRequest();
             }
         }
+        
 
         private void parseRequest(string data)
         {
@@ -99,7 +109,7 @@ namespace WebServer
             http_url = http_url.Substring(1);
             string[] split = Regex.Split(http_url, "/");
             //böses favicon
-            bool favicon = http_url.StartsWith("favicon.ico", System.StringComparison.CurrentCultureIgnoreCase);
+            favicon = http_url.StartsWith("favicon.ico", System.StringComparison.CurrentCultureIgnoreCase);
             if (favicon == false)
             {
                 theUrl.setFullUrl(http_url);
@@ -110,7 +120,7 @@ namespace WebServer
                 split.CopyTo(SplitUrl, 0);
                 theUrl.setSplitUrl(SplitUrl);
                 Console.WriteLine("Got this:");
-
+                
                 foreach (string o in SplitUrl)
                 {
                     Console.WriteLine(o);
@@ -119,6 +129,7 @@ namespace WebServer
             else
             {
                 Console.WriteLine("Favicon!");
+                //throw new System.ArgumentException("Favicon!", http_url);
             }
         }
 

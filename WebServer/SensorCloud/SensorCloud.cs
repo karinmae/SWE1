@@ -16,7 +16,12 @@ using WebLibrary;
 namespace Interface
 {
     public class SensorCloud : IPlugin
-    {    
+    {
+
+        //private Response newResponse = new Response();
+        private Url newUrl = new Url();
+        private String pluginName;
+        private NetworkStream clientStream;
         //Datenbankverbindung
         private string strCon = @"Data Source=.\sqlexpress;" + "Initial Catalog=TempSensor;Integrated Security=true;";
         public void start()
@@ -27,20 +32,23 @@ namespace Interface
             ReadSensor.Start();
 
         }
+
         public string getName()
         {
             return "SensorCloud";
         }
 
-        public void handleRequest(Url url)
+        public void handleRequest(Url url, NetworkStream stream)
         {
-            Url newUrl = new Url();
             newUrl = (Url)url;
            // DateTime Date = new DateTime();
             string Datum;
+            clientStream = stream;
+            //if (clientStream == null) throw new ArgumentNullException("stream");
             string[] split = newUrl.getSplitUrl();
-            string pluginName = newUrl.getPluginName();
-            if (pluginName == "getTemperature")
+            pluginName = newUrl.getPluginName();
+            
+            if (String.Compare(pluginName, "getTemperature") == 0)
             {
                 //Console.WriteLine("{0}: handleRequest", pluginName);
                 if (split.Length == 4)
@@ -52,13 +60,15 @@ namespace Interface
                 }
                 else
                 {
-                    Console.WriteLine("Failed");
+                    Console.WriteLine("Too few Arguments");
                 }
             }
          }
+
+
         //Auslesen der Datenbank
         private void ReadTempValue()
-        {
+        {          
             try
             {
                 using (SqlConnection db = new SqlConnection(strCon))
@@ -67,7 +77,7 @@ namespace Interface
                     Console.WriteLine("---");
                     //SQL Statement zum auslesen
                     SqlCommand cmdSelect = new SqlCommand("SELECT Temperatur, Datum FROM TempSensor ORDER BY [Datum]", db);
-                    cmdSelect.Parameters.AddWithValue("@Date", "28.11.2013");
+                    //cmdSelect.Parameters.AddWithValue("@Date", "28.11.2013");
 
                     using (SqlDataReader rd = cmdSelect.ExecuteReader())
                     {
@@ -83,7 +93,8 @@ namespace Interface
                     }
 
                     // Verbindung schließen 
-                    db.Close(); 
+                    db.Close();
+                    
             }
 
             }
@@ -95,7 +106,9 @@ namespace Interface
 
         private void SearchTemp(string Date)
         {
-           try
+            if (clientStream == null) throw new ArgumentNullException("stream");
+            StreamWriter sw = new StreamWriter(clientStream);    
+            try
             {
                 using (SqlConnection db = new SqlConnection(strCon))
                 {

@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net.Sockets;
+using System.Net;
+using System.Threading;
+using System.Text.RegularExpressions;
+using System.IO;
+using System.Collections;
 using Interface;
 using System.Reflection;
 using WebLibrary;
@@ -44,17 +50,17 @@ namespace WebServer
             foreach (var plugin in plugins)
             {
                 plugin.start();
-                //plugin.handleRequest();
-
             }
         }
 
-        public void HandleRequest(Url url) //, string name = ""
+        public void HandleRequest(Url url, NetworkStream stream) //, string name = ""
         {
+            
             foreach (IPlugin p in plugins)
             {
-                p.handleRequest(url);
+                p.handleRequest(url, stream);
             }
         }
+
     }
 }

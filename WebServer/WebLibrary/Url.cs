@@ -18,7 +18,7 @@ namespace WebLibrary
         private String PluginName; 
         //private String new_http_url;
         private String[] SplitUrl;
-
+        
         public String getFullUrl()
         {
             return FullUrl;

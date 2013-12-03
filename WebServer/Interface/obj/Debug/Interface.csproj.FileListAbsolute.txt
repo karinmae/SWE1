@@ -7,3 +7,10 @@ C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\Interfac
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\Interface\obj\Debug\Interface.csprojResolveAssemblyReference.cache
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\Interface\obj\Debug\Interface.dll
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\Interface\obj\Debug\Interface.pdb
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\WebServer\Interface\bin\Debug\Interface.dll
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\WebServer\Interface\bin\Debug\Interface.pdb
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\WebServer\Interface\bin\Debug\WebLibrary.dll
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\WebServer\Interface\bin\Debug\WebLibrary.pdb
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\WebServer\Interface\obj\Debug\Interface.csprojResolveAssemblyReference.cache
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\WebServer\Interface\obj\Debug\Interface.dll
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\WebServer\Interface\obj\Debug\Interface.pdb

@@ -69,23 +69,29 @@ namespace WebServer
 
                             //Neues URL Objekt
                             Url theNew = new Url();
-                            
+
                             //Einlesen
                             Request neuerReader = new Request(clientStream);
-                            
-                            //Objekt vom Reader hole
                             theNew = (Url)neuerReader.getURL();
                             string pluginName = theNew.getPluginName();
+                            string[] splitString = theNew.getSplitUrl();
+                                                        
+                            //Nachricht an Client
+                            if(splitString.Length<=1)
+                            {
+                                Response neuerWriter = new Response(clientStream, theNew);
+                            }
+                            
+                            
 
                             //An Plugin Manager weiterreichen
                             if (!String.IsNullOrEmpty(pluginName))
-                            { plugin.HandleRequest(theNew); }
+                            {
+                                plugin.HandleRequest(theNew, clientStream);
+                            }
 
                             //Console.WriteLine("PluginName: {0}", pluginName);
                             
-                            //Nachricht an Client
-                            Response neuerWriter = new Response(clientStream, theNew);
-
                             Console.WriteLine("No. {0} disconnected *~ ", Threadcount);
                             Console.WriteLine("____________________________");
                             return;

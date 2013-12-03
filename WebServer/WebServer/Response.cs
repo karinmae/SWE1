@@ -12,19 +12,20 @@ using WebLibrary;
 
 namespace WebServer
 {
-   public class Response
+    public class Response
     {
+        public StreamWriter sw;
         private NetworkStream stream;
+
+
         public Response(object clientStream, object theUrl)
         {
+            stream = (NetworkStream)clientStream;
+            StreamWriter sw = new StreamWriter(stream);
             Url newUrl = new Url();
             newUrl = (Url)theUrl;
             string pluginName = newUrl.getPluginName();
             string http_url = newUrl.getFullUrl();
-
-            stream = (NetworkStream)clientStream;
-            StreamWriter sw = new StreamWriter(stream);
-
             if (String.Compare(pluginName, "getTemperature") == 0)
             {
                 sw.WriteLine("HTTP/1.1 200 OK");
@@ -94,16 +95,15 @@ namespace WebServer
                 sw.WriteLine("<input type=submit name=bar value=los>");
                 sw.WriteLine("</form>");
                 sw.WriteLine("<ul>");
-				sw.WriteLine("<li><a href='http://localhost:8080/getTemperature'>SensorCloud</a></li>");
-			    sw.WriteLine("<li><a href='http://localhost:8080/StaticFile'>StaticFile</a></li>");
-			    sw.WriteLine("<li><a href='http://localhost:8080/Navi'>Navi</a></li>");
-			    sw.WriteLine("<li><a href='http://localhost:8080/Eigen'>Eigenes Plugin</a></li>");
+                sw.WriteLine("<li><a href='http://localhost:8080/getTemperature'>SensorCloud</a></li>");
+                sw.WriteLine("<li><a href='http://localhost:8080/StaticFile'>StaticFile</a></li>");
+                sw.WriteLine("<li><a href='http://localhost:8080/Navi'>Navi</a></li>");
+                sw.WriteLine("<li><a href='http://localhost:8080/Eigen'>Eigenes Plugin</a></li>");
                 sw.WriteLine("</ul></body></html>");
                 sw.Flush();
             }
-           
 
         }
-
     }
-}
+    }
+
