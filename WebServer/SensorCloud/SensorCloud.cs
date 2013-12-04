@@ -54,6 +54,7 @@ namespace Interface
                 if (split.Length == 4)
                 {
                     Datum = split[3] + '-' + split[2] + '-' + split[1];
+                    //Date fehler abfragen
                     Date = DateTime.Parse(Datum, System.Globalization.CultureInfo.InvariantCulture);
                     Console.WriteLine("Date: {0}", Date);
                     SearchTemp(Date);
