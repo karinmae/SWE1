@@ -39,12 +39,16 @@ namespace Interface
         {
 
             StreamWriter sw = new StreamWriter(stream);
-            string path = @".\\files\\" + filename;
+            string path = @".\files\" + filename;
             byte[] buffer = ReadAllBytes(path);
 
-
+            sw.WriteLine("HTTP/1.1 200 OK");
+            sw.WriteLine("connection: close");
+           // sw.WriteLine("Content-Type: text/html");
+            sw.WriteLine();
+            sw.Flush();
             stream.Write(buffer, 0, buffer.Length);
-            
+            stream.Flush();
         }
 
         public void handleRequest(Url url, NetworkStream clientStream)
