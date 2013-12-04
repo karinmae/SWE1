@@ -10,12 +10,9 @@
 					body {
 						font-family: Arial;
 						background-color: #F6D8CE;
+						
 					}
 
-					#wrapper {
-						margin:auto;
-						width: 799px;	
-					}
 
 					h1  { 
 						font-family: Hobo std;
@@ -23,7 +20,7 @@
 						font-weight: bold; 
 						color: #CC3333;
 						padding-top: 20px;
-						padding-right: 20px;
+						padding-left: 50px;
 						padding-top:50px;				}
 
 					h4 {
@@ -32,23 +29,39 @@
 						color: #FF3333;
 						font-weight: bold;
 						padding-bottom: 10px;
-						padding-right: 20px;
+						padding-left: 50px;
 					}
 
 					p {
 						font-family: Arial;
 						color: #330000;	
+						padding-left: 50px;
 					}
+					
+					ul {
+						padding-left: 50px;
+					}
+					
+					
 				</style>
 		</head>
 		
 	<body>
-		<div id="wrapper">
-			
 				<h1>Herzlich Willkommen</h1>
 				<h4>auf unserem Webserver</h4>
+				
+				<ul>
+					<li><a href='http://127.0.0.1:8080/getTemperature'>SensorCloud</a></li>
+					<li><a href='http://127.0.0.1:8080/StaticFile'>StaticFile</a></li>
+					<li><a href='http://127.0.0.1:8080/Navi'>Navi</a></li>
+					<li><a href='http://127.0.0.1:8080/Eigen'>Eigenes Plugin</a>
+                </ul>
+				<p>Funktionen:</p>
+				<p>StaticFile - Auslesen von Datein (Usage: StaticFile/filename)</p>
+				<p>SensorCloud - Auslesen von Temperaturdaten (Usage: getTamperature/tag/monat/jahr)</p>
+				<p>Navi - noch nicht implementiert</p>
+				<p>Eigenes Plugin - noch nicht implementiert</p>
 			
-		</div>	
   </body>
 
 </html>

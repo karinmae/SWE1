@@ -151,47 +151,47 @@ namespace WebServer
             }
         }
 
-        //private const int BUF_SIZE = 4096;
-        //private static int MAX_POST_SIZE = 10 * 1024 * 1024; // 10MB
+        private const int BUF_SIZE = 4096;
+        private static int MAX_POST_SIZE = 10 * 1024 * 1024; // 10MB
         private void handlePOSTRequest()
         {
-            //Console.WriteLine("POST");
-            //int content_len = 0;
-            //MemoryStream ms = new MemoryStream();
-            //if (this.httpHeaders.ContainsKey("Content-Length"))
-            //{
-            //    content_len = Convert.ToInt32(this.httpHeaders["Content-Length"]);
-            //    if (content_len > MAX_POST_SIZE)
-            //    {
-            //        throw new Exception(
-            //            String.Format("POST Content-Length({0}) too big",
-            //              content_len));
-            //    }
-            //    byte[] buf = new byte[BUF_SIZE];
-            //    int to_read = content_len;
-            //    while (to_read > 0)
-            //    {
-            //        Console.WriteLine("starting Read, to_read={0}", to_read);
+            Console.WriteLine("POST");
+            int content_len = 0;
+            MemoryStream ms = new MemoryStream();
+            if (this.httpHeaders.ContainsKey("Content-Length"))
+            {
+                content_len = Convert.ToInt32(this.httpHeaders["Content-Length"]);
+                if (content_len > MAX_POST_SIZE)
+                {
+                    throw new Exception(
+                        String.Format("POST Content-Length({0}) too big",
+                          content_len));
+                }
+                byte[] buf = new byte[BUF_SIZE];
+                int to_read = content_len;
+                while (to_read > 0)
+                {
+                    Console.WriteLine("starting Read, to_read={0}", to_read);
 
-            //        int numread = this.inputStream.Read(buf, 0, Math.Min(BUF_SIZE, to_read));
-            //        Console.WriteLine("read finished, numread={0}", numread);
-            //        if (numread == 0)
-            //        {
-            //            if (to_read == 0)
-            //            {
-            //                break;
-            //            }
-            //            else
-            //            {
-            //                throw new Exception("client disconnected during post");
-            //            }
-            //        }
-            //        to_read -= numread;
-            //        ms.Write(buf, 0, numread);
-            //    }
-            //    ms.Seek(0, SeekOrigin.Begin);
-            //}
-            //Console.WriteLine("get post data end");
+                    int numread = this.stream.Read(buf, 0, Math.Min(BUF_SIZE, to_read));
+                    Console.WriteLine("read finished, numread={0}", numread);
+                    if (numread == 0)
+                    {
+                        if (to_read == 0)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            throw new Exception("client disconnected during post");
+                        }
+                    }
+                    to_read -= numread;
+                    ms.Write(buf, 0, numread);
+                }
+                ms.Seek(0, SeekOrigin.Begin);
+            }
+            Console.WriteLine("get post data end");
         }
     }
 }
