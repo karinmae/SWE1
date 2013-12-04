@@ -39,7 +39,7 @@ namespace Interface
         {
 
             StreamWriter sw = new StreamWriter(stream);
-            string path = @".\" + filename;
+            string path = @".\\files\\" + filename;
             byte[] buffer = ReadAllBytes(path);
 
 

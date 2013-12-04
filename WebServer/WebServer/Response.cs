@@ -25,6 +25,7 @@ namespace WebServer
             Url newUrl = new Url();
             newUrl = (Url)theUrl;
             string pluginName = newUrl.getPluginName();
+            
             string http_url = newUrl.getFullUrl();
             if (String.Compare(pluginName, "getTemperature") == 0)
             {
@@ -35,10 +36,10 @@ namespace WebServer
                 sw.WriteLine();
                 sw.WriteLine("<html><body><h1>WebServer - SensorCloud</h1>");
                 sw.WriteLine("url : {0}", http_url);
-                //sw.WriteLine("<form method=post action=/form>");
-                //sw.WriteLine("<input type=text name=date value=Insert Date>");
-                //sw.WriteLine("<input type=submit value=los>");
-                //sw.WriteLine("</form>");
+                sw.WriteLine("<form method=post action=/form>");
+                sw.WriteLine("<input type=text name=date value=Insert Date>");
+                sw.WriteLine("<input type=submit value=los>");
+                sw.WriteLine("</form>");
                 sw.WriteLine("<br> Usage: '/day/month/year'");
                 sw.WriteLine("</body></html>");
                 sw.Flush();
@@ -82,27 +83,28 @@ namespace WebServer
                 sw.WriteLine("</body></html>");
                 sw.Flush();
             }
-            else
-            {
-                sw.WriteLine("HTTP/1.1 200 OK");
-                sw.WriteLine("connection: close");
-                //sw.WriteLine("content-length: 11");
-                sw.WriteLine("content-type: text/html");
-                sw.WriteLine();
-                sw.WriteLine("<html><body><h1>WebServer</h1>");
-                sw.WriteLine("url : {0}", http_url);
-                //sw.WriteLine("<form method=post action=/form>");
-                //sw.WriteLine("<input type=text name=foo value=foovalue>");
-                //sw.WriteLine("<input type=submit name=bar value=los>");
-                //sw.WriteLine("</form>");
-                sw.WriteLine("<ul>");
-                sw.WriteLine("<li><a href='http://localhost:8080/getTemperature'>SensorCloud</a></li>");
-                sw.WriteLine("<li><a href='http://localhost:8080/StaticFile'>StaticFile</a></li>");
-                sw.WriteLine("<li><a href='http://localhost:8080/Navi'>Navi</a></li>");
-                sw.WriteLine("<li><a href='http://localhost:8080/Eigen'>Eigenes Plugin</a></li>");
-                sw.WriteLine("</ul></body></html>");
-                sw.Flush();
-            }
+           // else
+           // {
+
+                //sw.WriteLine("HTTP/1.1 200 OK");
+                //sw.WriteLine("connection: close");
+                ////sw.WriteLine("content-length: 11");
+                //sw.WriteLine("content-type: text/html");
+                //sw.WriteLine();
+                //sw.WriteLine("<html><body><h1>WebServer</h1>");
+                //sw.WriteLine("url : {0}", http_url);
+                ////sw.WriteLine("<form method=post action=/form>");
+                ////sw.WriteLine("<input type=text name=foo value=foovalue>");
+                ////sw.WriteLine("<input type=submit name=bar value=los>");
+                ////sw.WriteLine("</form>");
+                //sw.WriteLine("<ul>");
+                //sw.WriteLine("<li><a href='http://127.0.0.1:8080/getTemperature'>SensorCloud</a></li>");
+                //sw.WriteLine("<li><a href='http://127.0.0.1:8080/StaticFile'>StaticFile</a></li>");
+                //sw.WriteLine("<li><a href='http://127.0.0.1:8080/Navi'>Navi</a></li>");
+                //sw.WriteLine("<li><a href='http://127.0.0.1:8080/Eigen'>Eigenes Plugin</a></li>");
+                //sw.WriteLine("</ul></body></html>");
+                //sw.Flush();
+         //   }
 
         }
     }

@@ -29,9 +29,7 @@ C:\git\SWE1\WebServer\WebServer\obj\Debug\WebServer.csprojResolveAssemblyReferen
 C:\git\SWE1\WebServer\WebServer\bin\Debug\WebServer.exe
 C:\git\SWE1\WebServer\WebServer\bin\Debug\WebServer.pdb
 C:\git\SWE1\WebServer\WebServer\bin\Debug\Interface.dll
-C:\git\SWE1\WebServer\WebServer\bin\Debug\SensorCloud.dll
 C:\git\SWE1\WebServer\WebServer\bin\Debug\Interface.pdb
-C:\git\SWE1\WebServer\WebServer\bin\Debug\SensorCloud.pdb
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebServer\bin\Debug\WebServer.exe.config
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebServer\bin\Debug\WebServer.exe
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebServer\bin\Debug\WebServer.pdb
@@ -52,3 +50,5 @@ C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\WebServer\WebServer\bin
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\WebServer\WebServer\obj\Debug\WebServer.csprojResolveAssemblyReference.cache
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\WebServer\WebServer\obj\Debug\WebServer.exe
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\WebServer\WebServer\obj\Debug\WebServer.pdb
+C:\git\SWE1\WebServer\WebServer\bin\Debug\WebLibrary.dll
+C:\git\SWE1\WebServer\WebServer\bin\Debug\WebLibrary.pdb

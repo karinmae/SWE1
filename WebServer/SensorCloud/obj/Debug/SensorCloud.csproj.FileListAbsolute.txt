@@ -22,3 +22,12 @@ C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\WebServer\SensorCloud\b
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\WebServer\SensorCloud\obj\Debug\SensorCloud.csprojResolveAssemblyReference.cache
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\WebServer\SensorCloud\obj\Debug\SensorCloud.dll
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\WebServer\SensorCloud\obj\Debug\SensorCloud.pdb
+C:\git\SWE1\WebServer\SensorCloud\bin\Debug\SensorCloud.dll
+C:\git\SWE1\WebServer\SensorCloud\bin\Debug\SensorCloud.pdb
+C:\git\SWE1\WebServer\SensorCloud\bin\Debug\Interface.dll
+C:\git\SWE1\WebServer\SensorCloud\bin\Debug\WebLibrary.dll
+C:\git\SWE1\WebServer\SensorCloud\bin\Debug\Interface.pdb
+C:\git\SWE1\WebServer\SensorCloud\bin\Debug\WebLibrary.pdb
+C:\git\SWE1\WebServer\SensorCloud\obj\Debug\SensorCloud.csprojResolveAssemblyReference.cache
+C:\git\SWE1\WebServer\SensorCloud\obj\Debug\SensorCloud.dll
+C:\git\SWE1\WebServer\SensorCloud\obj\Debug\SensorCloud.pdb

@@ -8,3 +8,7 @@ C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\WebServer\WebLibrary\bi
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\WebServer\WebLibrary\obj\Debug\WebLibrary.dll
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\WebServer\WebLibrary\obj\Debug\WebLibrary.pdb
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\WebServer\WebLibrary\obj\Debug\WebLibrary.csprojResolveAssemblyReference.cache
+C:\git\SWE1\WebServer\WebLibrary\bin\Debug\WebLibrary.dll
+C:\git\SWE1\WebServer\WebLibrary\bin\Debug\WebLibrary.pdb
+C:\git\SWE1\WebServer\WebLibrary\obj\Debug\WebLibrary.dll
+C:\git\SWE1\WebServer\WebLibrary\obj\Debug\WebLibrary.pdb

@@ -29,6 +29,7 @@ namespace WebServer
         public Request(String httpURL)
         {
             http_url = httpURL;
+            http_method = "GET";
             handleGETRequest();
         }
         //~*
@@ -55,6 +56,7 @@ namespace WebServer
                 handlePOSTRequest();
             }
         }
+
         
 
         public void parseRequest(string data)
@@ -119,6 +121,22 @@ namespace WebServer
                 SplitUrl = new string[split.Length];
                 split.CopyTo(SplitUrl, 0);
                 theUrl.setSplitUrl(SplitUrl);
+
+                string pluginName = theUrl.getPluginName();
+
+                //Falls nichts eingegeben wird - index.html aufrufen
+                if (String.IsNullOrEmpty(pluginName))
+                {
+                    string url = "/StaticFile/index.html";
+                    theUrl.setFullUrl(url);
+
+                    string[] splitted = { "StaticFile", "index.html" };
+                    theUrl.setPluginName(splitted[0]);
+                    SplitUrl = new string[splitted.Length];
+                    splitted.CopyTo(SplitUrl, 0);
+                    theUrl.setSplitUrl(SplitUrl);
+
+                }
                 Console.WriteLine("Got this:");
                 
                 foreach (string o in SplitUrl)
@@ -137,7 +155,7 @@ namespace WebServer
         //private static int MAX_POST_SIZE = 10 * 1024 * 1024; // 10MB
         private void handlePOSTRequest()
         {
-            Console.WriteLine("POST");
+            //Console.WriteLine("POST");
             //int content_len = 0;
             //MemoryStream ms = new MemoryStream();
             //if (this.httpHeaders.ContainsKey("Content-Length"))
