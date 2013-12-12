@@ -1,0 +1,9 @@
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\Navi\bin\Debug\Navi.dll
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\Navi\bin\Debug\Navi.pdb
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\Navi\bin\Debug\Interface.dll
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\Navi\bin\Debug\WebLibrary.dll
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\Navi\bin\Debug\Interface.pdb
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\Navi\bin\Debug\WebLibrary.pdb
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\Navi\obj\Debug\Navi.csprojResolveAssemblyReference.cache
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\Navi\obj\Debug\Navi.dll
+C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\SWE1\WebServer\Navi\obj\Debug\Navi.pdb

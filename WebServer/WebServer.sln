@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebLibrary", "WebLibrary\We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "Test_handleGETRequest\UnitTest.csproj", "{F92EA227-0E7D-4BD3-83AC-1AFB16470567}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Navi", "Navi\Navi.csproj", "{304B9DAD-25DC-4C75-9E12-9FF54C900EB0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{F92EA227-0E7D-4BD3-83AC-1AFB16470567}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F92EA227-0E7D-4BD3-83AC-1AFB16470567}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F92EA227-0E7D-4BD3-83AC-1AFB16470567}.Release|Any CPU.Build.0 = Release|Any CPU
+		{304B9DAD-25DC-4C75-9E12-9FF54C900EB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{304B9DAD-25DC-4C75-9E12-9FF54C900EB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{304B9DAD-25DC-4C75-9E12-9FF54C900EB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{304B9DAD-25DC-4C75-9E12-9FF54C900EB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
