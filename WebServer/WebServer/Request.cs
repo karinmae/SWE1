@@ -18,9 +18,9 @@ namespace WebServer
     public class Request
     {
         private String http_method;
-        private BufferedStream inputStream;
         protected String http_url;
         private NetworkStream stream;
+        private StreamReader sr;
         //private String[,] httpHeaders;
         public Hashtable httpHeaders = new Hashtable();
         public String[] SplitUrl;
@@ -45,23 +45,22 @@ namespace WebServer
         public Request(object clientStream)
         {
             stream = (NetworkStream)clientStream;
-            var sr = new StreamReader(stream);
-            inputStream = new BufferedStream(stream);
-            
+            sr = new StreamReader(stream);
+
             string data = sr.ReadLine();
             parseRequest(data);
-            readHeaders(sr);
-            if (http_method=="GET")
+            readHeaders();
+            if (http_method == "GET")
             {
-                handleGETRequest();             
+                handleGETRequest();
             }
-            else if (http_method=="POST")
+            else if (http_method == "POST")
             {
                 handlePOSTRequest();
             }
         }
 
-        
+
 
         public void parseRequest(string data)
         {
@@ -76,7 +75,7 @@ namespace WebServer
             Console.WriteLine("Received {0}", http_url);
         }
 
-        private void readHeaders(StreamReader sr)
+        private void readHeaders()
         {
             String line;
             while ((line = sr.ReadLine()) != null)
@@ -142,7 +141,7 @@ namespace WebServer
 
                 }
                 Console.WriteLine("Got this:");
-                
+
                 foreach (string o in SplitUrl)
                 {
                     Console.WriteLine(o);
@@ -161,7 +160,7 @@ namespace WebServer
         private void handlePOSTRequest()
         {
 
-           // inputStream = new BufferedStream(stream);
+            // inputStream = new BufferedStream(stream);
 
             Console.WriteLine("POST");
 
@@ -179,32 +178,37 @@ namespace WebServer
                 }
 
 
-                byte[] buf = new byte[BUF_SIZE];
+                byte[] buf = null;
                 int to_read = content_len;
                 while (to_read > 0)
                 {
 
-                        Console.WriteLine("starting Read, to_read={0}", to_read);
-                        int min = Math.Min(BUF_SIZE, to_read);
-                        int numread = this.inputStream.Read(buf, 0, min);
-                        // int numread = this.inputstream.Read(buf, 0, Math.Min(BUF_SIZE, to_read));
-                        Console.WriteLine("read finished, numread={0}", numread);
-                        if (numread == 0)
-                        {
-                            if (to_read == 0)
-                            {
+                    Console.WriteLine("starting Read, to_read={0}", to_read);
+                    int lengthToRead = Math.Min(BUF_SIZE, to_read);
 
-                                break;
-                            }
-                            else
-                            {
-                                throw new Exception("client disconnected during post");
-                            }
+                    // Das unterstützt KEINE binärdaten (von Hr. Zaczek freigegeben, nachdem es eine Belehrung über diesen pfusch gegeben hat)
+                    var charBuffer = new char[lengthToRead];
+                    int numread = this.sr.Read(charBuffer, 0, lengthToRead);
+                    buf = charBuffer.Take(numread).Select(c => (byte)c).ToArray();
+                    // int numread = this.inputstream.Read(buf, 0, Math.Min(BUF_SIZE, to_read));
+                    Console.WriteLine("read finished, numread={0}", numread);
+                    var x_www_form_urlencoded = new string(charBuffer);
+                    if (numread == 0)
+                    {
+                        if (to_read == 0)
+                        {
+
+                            break;
                         }
-                        to_read -= numread;
-                        ms.Write(buf, 0, numread);
-               
-                    
+                        else
+                        {
+                            throw new Exception("client disconnected during post");
+                        }
+                    }
+                    to_read -= numread;
+                    ms.Write(buf, 0, numread);
+
+
                 }
                 ms.Seek(0, SeekOrigin.Begin);
             }

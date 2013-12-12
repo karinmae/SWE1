@@ -97,9 +97,9 @@ namespace WebServer
                             return;
                         }
 
-                        catch
+                        catch(Exception ex)
                         {
-                            Console.WriteLine("Magic failed... :(");
+                            Console.WriteLine("Magic failed... :(.... " + ex.ToString());
                             return;
                         }
                     }
