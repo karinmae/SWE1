@@ -9,6 +9,7 @@ using System.Threading;
 using System.Text.RegularExpressions;
 using System.IO;
 using System.Collections;
+using System.Web;
 using WebLibrary;
 
 
@@ -17,6 +18,7 @@ namespace WebServer
     public class Request
     {
         private String http_method;
+        private BufferedStream inputStream;
         protected String http_url;
         private NetworkStream stream;
         //private String[,] httpHeaders;
@@ -44,6 +46,8 @@ namespace WebServer
         {
             stream = (NetworkStream)clientStream;
             var sr = new StreamReader(stream);
+            inputStream = new BufferedStream(stream);
+            
             string data = sr.ReadLine();
             parseRequest(data);
             readHeaders(sr);
@@ -153,9 +157,14 @@ namespace WebServer
 
         private const int BUF_SIZE = 4096;
         private static int MAX_POST_SIZE = 10 * 1024 * 1024; // 10MB
+
         private void handlePOSTRequest()
         {
+
+           // inputStream = new BufferedStream(stream);
+
             Console.WriteLine("POST");
+
             int content_len = 0;
             MemoryStream ms = new MemoryStream();
             if (this.httpHeaders.ContainsKey("Content-Length"))
@@ -166,32 +175,42 @@ namespace WebServer
                     throw new Exception(
                         String.Format("POST Content-Length({0}) too big",
                           content_len));
+
                 }
+
+
                 byte[] buf = new byte[BUF_SIZE];
                 int to_read = content_len;
                 while (to_read > 0)
                 {
-                    Console.WriteLine("starting Read, to_read={0}", to_read);
 
-                    int numread = this.stream.Read(buf, 0, Math.Min(BUF_SIZE, to_read));
-                    Console.WriteLine("read finished, numread={0}", numread);
-                    if (numread == 0)
-                    {
-                        if (to_read == 0)
+                        Console.WriteLine("starting Read, to_read={0}", to_read);
+                        int min = Math.Min(BUF_SIZE, to_read);
+                        int numread = this.inputStream.Read(buf, 0, min);
+                        // int numread = this.inputstream.Read(buf, 0, Math.Min(BUF_SIZE, to_read));
+                        Console.WriteLine("read finished, numread={0}", numread);
+                        if (numread == 0)
                         {
-                            break;
+                            if (to_read == 0)
+                            {
+
+                                break;
+                            }
+                            else
+                            {
+                                throw new Exception("client disconnected during post");
+                            }
                         }
-                        else
-                        {
-                            throw new Exception("client disconnected during post");
-                        }
-                    }
-                    to_read -= numread;
-                    ms.Write(buf, 0, numread);
+                        to_read -= numread;
+                        ms.Write(buf, 0, numread);
+               
+                    
                 }
                 ms.Seek(0, SeekOrigin.Begin);
             }
             Console.WriteLine("get post data end");
         }
+
+        //http://stackoverflow.com/questions/7305010/net-handlepostrequest-retrieving-data
     }
 }

@@ -25,8 +25,10 @@ namespace WebServer
             Url newUrl = new Url();
             newUrl = (Url)theUrl;
             string pluginName = newUrl.getPluginName();
-            
+
             string http_url = newUrl.getFullUrl();
+
+
 
             sw.WriteLine("HTTP/1.1 200 OK");
             sw.WriteLine("connection: close");
@@ -47,32 +49,24 @@ namespace WebServer
             sw.WriteLine("</style></head>");
             sw.WriteLine("<html><body><h1>WebServer</h1>");
 
+
             if (String.Compare(pluginName, "getTemperature") == 0)
             {
-                //sw.WriteLine("HTTP/1.1 200 OK");
-                //sw.WriteLine("connection: close");
-                ////sw.WriteLine("content-length: 11");
-                //sw.WriteLine("content-type: text/html");
-                //sw.WriteLine();
-                //sw.WriteLine("<html><body><h1>WebServer - SensorCloud</h1>");
                 sw.WriteLine("<h4>SensorCloud</h4>");
                 sw.WriteLine("<div id='navi'><p>url : {0}</p>", http_url);
                 sw.WriteLine("<form method=post action=/form>");
-                sw.WriteLine("<input type=text name=date value=Insert Date>");
-                sw.WriteLine("<input type=submit value=los>");
+                sw.WriteLine("<input type='text' name='date' value='Insert Date'>");
+                sw.WriteLine("<input type='submit' value='los'>");
                 sw.WriteLine("</form>");
                 sw.WriteLine("<br><p>Usage: '/day/month/year'</p>");
                 sw.WriteLine("</div></body></html>");
                 sw.Flush();
+
             }
+
+
             else if (String.Compare(pluginName, "StaticFile") == 0)
             {
-                //sw.WriteLine("HTTP/1.1 200 OK");
-                //sw.WriteLine("connection: close");
-                ////sw.WriteLine("content-length: 11");
-                //sw.WriteLine("content-type: text/html");
-                //sw.WriteLine();
-                //sw.WriteLine("<html><body><h1>WebServer - StaticFile</h1>");
                 sw.WriteLine("<h4>StaticFile</h4>");
                 sw.WriteLine("<div id='navi'><p>url : {0}</p>", http_url);
                 sw.WriteLine("<br><p>Usage: '/StaticFile/Filename'</p>");
@@ -81,12 +75,6 @@ namespace WebServer
             }
             else if (String.Compare(pluginName, "Navi") == 0)
             {
-                //sw.WriteLine("HTTP/1.1 200 OK");
-                //sw.WriteLine("connection: close");
-                ////sw.WriteLine("content-length: 11");
-                //sw.WriteLine("content-type: text/html");
-                //sw.WriteLine();
-                //sw.WriteLine("<html><body><h1>WebServer - Navi</h1>");
                 sw.WriteLine("<h4>Navi</h4>");
                 sw.WriteLine("<div id='navi'><p>url : {0}</p>", http_url);
                 sw.WriteLine("<br><p>Not implemented</p>");
@@ -95,46 +83,13 @@ namespace WebServer
             }
             else if (String.Compare(pluginName, "Eigen") == 0)
             {
-                //sw.WriteLine("HTTP/1.1 200 OK");
-                //sw.WriteLine("connection: close");
-                ////sw.WriteLine("content-length: 11");
-                //sw.WriteLine("content-type: text/html");
-                //sw.WriteLine();
-                //sw.WriteLine("<html><body><h1>WebServer - Eigenes Plugin</h1>");
                 sw.WriteLine("<h4>Eigenes Plugin</h4>");
                 sw.WriteLine("<div id='navi'><p>url : {0}</p>", http_url);
                 sw.WriteLine("<br><p>Not implemented</p>");
                 sw.WriteLine("</div></body></html>");
                 sw.Flush();
             }
-           // else
-           // {
-
-                //sw.WriteLine("HTTP/1.1 200 OK");
-                //sw.WriteLine("connection: close");
-                ////sw.WriteLine("content-length: 11");
-                //sw.WriteLine("content-type: text/html");
-                //sw.WriteLine();
-                //sw.WriteLine("<html><body><h1>WebServer</h1>");
-                //sw.WriteLine("url : {0}", http_url);
-                ////sw.WriteLine("<form method=post action=/form>");
-                ////sw.WriteLine("<input type=text name=foo value=foovalue>");
-                ////sw.WriteLine("<input type=submit name=bar value=los>");
-                ////sw.WriteLine("</form>");
-                //sw.WriteLine("<ul>");
-                //sw.WriteLine("<li><a href='http://127.0.0.1:8080/getTemperature'>SensorCloud</a></li>");
-                //sw.WriteLine("<li><a href='http://127.0.0.1:8080/StaticFile'>StaticFile</a></li>");
-                //sw.WriteLine("<li><a href='http://127.0.0.1:8080/Navi'>Navi</a></li>");
-                //sw.WriteLine("<li><a href='http://127.0.0.1:8080/Eigen'>Eigenes Plugin</a></li>");
-                //sw.WriteLine("</ul></body></html>");
-                //sw.Flush();
-         //   }
-
-
-
-
-				
         }
     }
-    }
+}
 
