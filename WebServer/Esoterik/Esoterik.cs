@@ -52,7 +52,12 @@ namespace Esoterik
             }
             int MagicResult = MagicNumber % 10;
             Console.WriteLine("Your Number: {0}", MagicResult);
-            StreamWriter sw = new StreamWriter(stream); 
+            Datenbank(MagicResult);
+        }
+
+        private void Datenbank(int MagicResult)
+        {
+            StreamWriter sw = new StreamWriter(stream);
             //SQL-Connection
             try
             {
@@ -62,7 +67,7 @@ namespace Esoterik
                     //SQL Statement zum auslesen
                     SqlCommand cmdSelect = new SqlCommand("SELECT id, Name, Beschreibung FROM Esoterik WHERE [id] = @MagicResult Order by id;", db);
                     cmdSelect.Parameters.AddWithValue("@MagicResult", MagicResult);
-                    
+
                     using (SqlDataReader rd = cmdSelect.ExecuteReader())
                     {
                         // Daten holen
@@ -71,14 +76,14 @@ namespace Esoterik
                         sw.WriteLine("content-type: text/html");
                         sw.WriteLine();
                         sw.WriteLine("<html><body>");
-                        sw.WriteLine("<h1>");
+                        sw.WriteLine("<h3>");
                         while (rd.Read())
                         {
                             sw.WriteLine("Dein Name: {0}", rd["Name"]);
                             sw.WriteLine("</br>{0}", rd["Beschreibung"]);
                         }
                         // DataReader schließen 
-                        sw.WriteLine("</h1>");
+                        sw.WriteLine("</h3>");
                         sw.WriteLine("</body></html>");
                         sw.Flush();
                         rd.Close();

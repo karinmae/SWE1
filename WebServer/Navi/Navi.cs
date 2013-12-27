@@ -29,7 +29,7 @@ namespace Interface
             newUrl = (Url)url;
             string pluginName = newUrl.getPluginName();
 
-            if (pluginName == "StaticFile")
+            if (pluginName == "Navi")
             {
                 Console.WriteLine("{0}: handleRequest", pluginName);
             }
@@ -37,7 +37,7 @@ namespace Interface
 
         public string getName()
         {
-            return "StaticFile";
+            return "Navi";
         }
     }
 }

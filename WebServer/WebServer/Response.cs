@@ -67,7 +67,7 @@ namespace WebServer
             {
                 sw.WriteLine("<h4>StaticFile</h4>");
                 sw.WriteLine("<div id='navi'><p>url : {0}</p>", http_url);
-                sw.WriteLine("<br><p>Usage: '/StaticFile/Filename'</p>");
+                sw.WriteLine("<br><p>Usage: '/Filename'</p>");
                 sw.WriteLine("</div></body></html>");
                 sw.Flush();
             }
@@ -83,7 +83,7 @@ namespace WebServer
             {
                 sw.WriteLine("<h4>Esoterik Plugin</h4>");
                 sw.WriteLine("<div id='navi'><p>url : {0}</p>", http_url);
-                sw.WriteLine("<br><p>Not implemented</p>");
+                sw.WriteLine("<br><p>Usage: '/Name/Birthyear/Gender [m/w]'</p>");
                 sw.WriteLine("</div></body></html>");
                 sw.Flush();
             }
