@@ -1,0 +1,9 @@
+C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\Esoterik\bin\Debug\Esoterik.dll
+C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\Esoterik\bin\Debug\Esoterik.pdb
+C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\Esoterik\bin\Debug\Interface.dll
+C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\Esoterik\bin\Debug\WebLibrary.dll
+C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\Esoterik\bin\Debug\Interface.pdb
+C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\Esoterik\bin\Debug\WebLibrary.pdb
+C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\Esoterik\obj\Debug\Esoterik.dll
+C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\Esoterik\obj\Debug\Esoterik.pdb
+C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\Esoterik\obj\Debug\Esoterik.csprojResolveAssemblyReference.cache

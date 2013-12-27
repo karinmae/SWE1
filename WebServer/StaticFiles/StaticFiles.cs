@@ -23,9 +23,11 @@ namespace Interface
             Console.WriteLine("Static Files Plugin loaded");
         }
 
+        //Byte
         public byte[] ReadAllBytes(string fileName)
         {
             byte[] buffer = null;
+            //Filestream öffnen
             using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read))
             {
                 buffer = new byte[fs.Length];
@@ -35,9 +37,9 @@ namespace Interface
         }
 
 
-        private void SendFile()//clientStream, byte[] byteData
+        private void SendFile()
         {
-
+            //File mittels StreamWriter direkt an den Clienten senden
             StreamWriter sw = new StreamWriter(stream);
             string path = @".\files\" + filename;
             byte[] buffer = ReadAllBytes(path);

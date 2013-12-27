@@ -14,7 +14,7 @@ namespace WebServer
 {
     class Server
     {
-
+        //neue Objekte
         private TcpListener Listener;
         private Thread listenThread;
         private PluginManager plugin;
@@ -24,6 +24,7 @@ namespace WebServer
         private IPAddress localAddr = IPAddress.Any;
         int Threadcount = 0;
 
+        //Server starten
         public Server(ref PluginManager pm)
         {
             Listener = new TcpListener(localAddr, port);
@@ -82,8 +83,6 @@ namespace WebServer
                                 Response neuerWriter = new Response(clientStream, theNew);
                             }
                             
-                            
-
                             //An Plugin Manager weiterreichen
                             if (!String.IsNullOrEmpty(pluginName))
                             {

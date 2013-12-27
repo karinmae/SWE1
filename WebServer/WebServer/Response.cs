@@ -25,9 +25,7 @@ namespace WebServer
             Url newUrl = new Url();
             newUrl = (Url)theUrl;
             string pluginName = newUrl.getPluginName();
-
             string http_url = newUrl.getFullUrl();
-
 
 
             sw.WriteLine("HTTP/1.1 200 OK");
@@ -81,9 +79,9 @@ namespace WebServer
                 sw.WriteLine("</div></body></html>");
                 sw.Flush();
             }
-            else if (String.Compare(pluginName, "Eigen") == 0)
+            else if (String.Compare(pluginName, "Esoterik") == 0)
             {
-                sw.WriteLine("<h4>Eigenes Plugin</h4>");
+                sw.WriteLine("<h4>Esoterik Plugin</h4>");
                 sw.WriteLine("<div id='navi'><p>url : {0}</p>", http_url);
                 sw.WriteLine("<br><p>Not implemented</p>");
                 sw.WriteLine("</div></body></html>");

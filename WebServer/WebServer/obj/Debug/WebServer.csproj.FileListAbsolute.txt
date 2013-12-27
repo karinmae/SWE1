@@ -52,3 +52,13 @@ C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\WebServer\WebServer\obj
 C:\Users\tplac_000\Documents\Visual Studio 2012\Projects\WebServer\WebServer\obj\Debug\WebServer.pdb
 C:\git\SWE1\WebServer\WebServer\bin\Debug\WebLibrary.dll
 C:\git\SWE1\WebServer\WebServer\bin\Debug\WebLibrary.pdb
+C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebServer\bin\Debug\WebServer.exe.config
+C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebServer\obj\Debug\WebServer.exe
+C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebServer\obj\Debug\WebServer.pdb
+C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebServer\bin\Debug\WebServer.exe
+C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebServer\bin\Debug\WebServer.pdb
+C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebServer\bin\Debug\Interface.dll
+C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebServer\bin\Debug\WebLibrary.dll
+C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebServer\bin\Debug\Interface.pdb
+C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebServer\bin\Debug\WebLibrary.pdb
+C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebServer\obj\Debug\WebServer.csprojResolveAssemblyReference.cache

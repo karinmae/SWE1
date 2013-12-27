@@ -19,40 +19,25 @@ namespace Interface
 
         public void start()
         {
-            Console.WriteLine("Navi Plugin loaded");
+            Console.WriteLine("Navi loaded");
         }
 
-        public byte[] ReadAllBytes(string fileName)
-        {
-            byte[] buffer = null;
-            using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read))
-            {
-                buffer = new byte[fs.Length];
-                fs.Read(buffer, 0, (int)fs.Length);
-            }
-            return buffer;
-        }
-
-
-      
         public void handleRequest(Url url, NetworkStream clientStream)
         {
             stream = clientStream;
             Url newUrl = new Url();
             newUrl = (Url)url;
             string pluginName = newUrl.getPluginName();
-            string[] filenameSplit;
 
             if (pluginName == "StaticFile")
             {
                 Console.WriteLine("{0}: handleRequest", pluginName);
-                filenameSplit = newUrl.getSplitUrl();
             }
         }
 
         public string getName()
         {
-            return "Navi";
+            return "StaticFile";
         }
     }
 }

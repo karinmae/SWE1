@@ -25,17 +25,7 @@ namespace WebServer
             //In der Schleife wird der Ordner mit den dlls durchsucht
             foreach (var filename in System.IO.Directory.GetFiles(".\\plugins", "*.dll"))
             {
-
                 Assembly myDll = Assembly.LoadFrom(filename);
-
-                //var types = myDll.GetTypes().Where(t => typeof(IPlugin).IsAssignableFrom(t));
-
-                //foreach (var type in types)
-                //{
-                //    var obj = (Interface.IPlugin)Activator.CreateInstance(type);
-                //    plugins.Add(obj);
-                //}
-
                 foreach (Type asmtype in myDll.GetTypes())
                 {
                     if (asmtype.GetInterface("IPlugin") != null)
@@ -45,22 +35,18 @@ namespace WebServer
                     }
                 }
             }
-
-
             foreach (var plugin in plugins)
             {
                 plugin.start();
             }
         }
 
-        public void HandleRequest(Url url, NetworkStream stream) //, string name = ""
+        public void HandleRequest(Url url, NetworkStream stream)
         {
-            
             foreach (IPlugin p in plugins)
             {
                 p.handleRequest(url, stream);
             }
         }
-
     }
 }

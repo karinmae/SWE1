@@ -27,3 +27,12 @@ C:\git\SWE1\WebServer\StaticFiles\bin\Debug\WebLibrary.pdb
 C:\git\SWE1\WebServer\StaticFiles\obj\Debug\StaticFiles.csprojResolveAssemblyReference.cache
 C:\git\SWE1\WebServer\StaticFiles\obj\Debug\StaticFiles.dll
 C:\git\SWE1\WebServer\StaticFiles\obj\Debug\StaticFiles.pdb
+C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\StaticFiles\bin\Debug\StaticFiles.dll
+C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\StaticFiles\bin\Debug\StaticFiles.pdb
+C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\StaticFiles\bin\Debug\Interface.dll
+C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\StaticFiles\bin\Debug\WebLibrary.dll
+C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\StaticFiles\bin\Debug\Interface.pdb
+C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\StaticFiles\bin\Debug\WebLibrary.pdb
+C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\StaticFiles\obj\Debug\StaticFiles.csprojResolveAssemblyReference.cache
+C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\StaticFiles\obj\Debug\StaticFiles.dll
+C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\StaticFiles\obj\Debug\StaticFiles.pdb

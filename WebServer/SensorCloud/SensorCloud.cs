@@ -23,7 +23,7 @@ namespace Interface
         private String pluginName;
         private NetworkStream clientStream;
         //Datenbankverbindung
-        private string strCon = @"Data Source=.\sqlexpress;" + "Initial Catalog=TempSensor;Integrated Security=true;";
+        private string strCon = @"Data Source=(local);" + "Initial Catalog=TempSensor; Integrated Security=true;";
         public void start()
         {
             // wirklich viel steht hier ned x_X

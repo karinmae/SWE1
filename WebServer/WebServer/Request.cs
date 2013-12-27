@@ -159,7 +159,6 @@ namespace WebServer
 
         private void handlePOSTRequest()
         {
-
             // inputStream = new BufferedStream(stream);
 
             Console.WriteLine("POST");
@@ -176,7 +175,6 @@ namespace WebServer
                           content_len));
 
                 }
-
 
                 byte[] buf = null;
                 int to_read = content_len;
@@ -197,7 +195,6 @@ namespace WebServer
                     {
                         if (to_read == 0)
                         {
-
                             break;
                         }
                         else
