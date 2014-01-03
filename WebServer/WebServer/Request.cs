@@ -23,7 +23,7 @@ namespace WebServer
         private StreamReader sr;
         //private String[,] httpHeaders;
         public Hashtable httpHeaders = new Hashtable();
-        public String[] SplitUrl;
+        public string[] SplitUrl;
         public Url theUrl = new Url();
         public bool favicon;
 
@@ -100,82 +100,67 @@ namespace WebServer
                 }
 
                 string value = line.Substring(pos, line.Length - pos);
-                //Console.WriteLine("header: {0}:{1}\n", name, value);
-                //string[,] httpHeaders = new string[,] {{name, value}};
                 httpHeaders[name] = value;
+                //Console.WriteLine("header: {0}:{1}", name, value);
             }
         }
-
 
         public void handleGETRequest()
         {
             //Console.WriteLine("GET");
-            //erstes '/' abschnieden
             http_url = http_url.Substring(1);
-            string[] split = Regex.Split(http_url, "/");
-            //böses favicon
-            favicon = http_url.StartsWith("favicon.ico", System.StringComparison.CurrentCultureIgnoreCase);
-            if (favicon == false)
-            {
-                theUrl.setFullUrl(http_url);
-                theUrl.setPluginName(split[0]);
-
-                //copy the split Array into the SplitUrl array 
-                SplitUrl = new string[split.Length];
-                split.CopyTo(SplitUrl, 0);
-                theUrl.setSplitUrl(SplitUrl);
-
-                string pluginName = theUrl.getPluginName();
-
-                //Falls nichts eingegeben wird - index.html aufrufen
-                if (String.IsNullOrEmpty(pluginName))
+                string[] split = Regex.Split(http_url, "/");
+                //böses favicon
+                favicon = http_url.StartsWith("favicon.ico", System.StringComparison.CurrentCultureIgnoreCase);
+                if (favicon == false)
                 {
-                    string url = "/StaticFile/index.html";
-                    theUrl.setFullUrl(url);
+                    theUrl.setFullUrl(http_url);
+                    theUrl.setPluginName(split[0]);
 
-                    string[] splitted = { "StaticFile", "index.html" };
-                    theUrl.setPluginName(splitted[0]);
-                    SplitUrl = new string[splitted.Length];
-                    splitted.CopyTo(SplitUrl, 0);
+                    //copy the split Array into the SplitUrl array 
+                    SplitUrl = new string[split.Length];
+                    split.CopyTo(SplitUrl, 0);
                     theUrl.setSplitUrl(SplitUrl);
 
-                }
-                Console.WriteLine("Got this:");
+                    string pluginName = theUrl.getPluginName();
 
-                foreach (string o in SplitUrl)
-                {
-                    Console.WriteLine(o);
+                    //Falls nichts eingegeben wird - index.html aufrufen
+                    if (String.IsNullOrEmpty(pluginName))
+                    {
+                        string url = "/StaticFile/index.html";
+                        theUrl.setFullUrl(url);
+
+                        string[] splitted = { "StaticFile", "index.html" };
+                        theUrl.setPluginName(splitted[0]);
+                        SplitUrl = new string[splitted.Length];
+                        splitted.CopyTo(SplitUrl, 0);
+                        theUrl.setSplitUrl(SplitUrl);
+
+                    }
+                    Console.WriteLine("Got this:");
+
+                    foreach (string o in SplitUrl)
+                    {
+                        Console.WriteLine(o);
+                    }
                 }
-            }
-            else
-            {
-                Console.WriteLine("Favicon!");
-                //throw new System.ArgumentException("Favicon!", http_url);
-            }
+                else
+                {
+                    Console.WriteLine("Favicon!");
+                    //throw new System.ArgumentException("Favicon!", http_url);
+                }
         }
 
         private const int BUF_SIZE = 4096;
-        private static int MAX_POST_SIZE = 10 * 1024 * 1024; // 10MB
-
         private void handlePOSTRequest()
         {
-            // inputStream = new BufferedStream(stream);
-
             Console.WriteLine("POST");
-
             int content_len = 0;
+            string content_type;
             MemoryStream ms = new MemoryStream();
             if (this.httpHeaders.ContainsKey("Content-Length"))
             {
                 content_len = Convert.ToInt32(this.httpHeaders["Content-Length"]);
-                if (content_len > MAX_POST_SIZE)
-                {
-                    throw new Exception(
-                        String.Format("POST Content-Length({0}) too big",
-                          content_len));
-
-                }
-
                 byte[] buf = null;
                 int to_read = content_len;
                 while (to_read > 0)
@@ -188,9 +173,9 @@ namespace WebServer
                     var charBuffer = new char[lengthToRead];
                     int numread = this.sr.Read(charBuffer, 0, lengthToRead);
                     buf = charBuffer.Take(numread).Select(c => (byte)c).ToArray();
-                    // int numread = this.inputstream.Read(buf, 0, Math.Min(BUF_SIZE, to_read));
                     Console.WriteLine("read finished, numread={0}", numread);
                     var x_www_form_urlencoded = new string(charBuffer);
+
                     if (numread == 0)
                     {
                         if (to_read == 0)
@@ -205,13 +190,46 @@ namespace WebServer
                     to_read -= numread;
                     ms.Write(buf, 0, numread);
 
+                    string type = Convert.ToString(x_www_form_urlencoded);
 
+                    string[] split2 = type.Split(new Char[] {'=', '&'});
+
+                    SplitUrl = new string[split2.Length / 2];
+                    int k = 0;
+                    for (int j = 1; j < split2.Length; j+=2)
+                    {       
+                        string tempstring;
+                        tempstring = Convert.ToString(split2[j]);
+                        SplitUrl[k] = (string)tempstring.Clone();
+                        k++;
+                        theUrl.setSplitUrl(SplitUrl);
+                    }
+                    StringBuilder builder = new StringBuilder();
+                    foreach (string value in SplitUrl)
+                    {
+                        builder.Append(value);
+                        builder.Append('/');
+                    }
+                    string url = builder.ToString();
+                    theUrl.setFullUrl(url);
+
+                    Console.WriteLine("Got this:");
+
+                    foreach (string o in SplitUrl)
+                    {
+                        Console.WriteLine(o);
+                    }
+            
+        
+                    //    }
+                    //}
                 }
                 ms.Seek(0, SeekOrigin.Begin);
             }
             Console.WriteLine("get post data end");
         }
 
-        //http://stackoverflow.com/questions/7305010/net-handlepostrequest-retrieving-data
+        ////http://stackoverflow.com/questions/7305010/net-handlepostrequest-retrieving-data
+
     }
 }

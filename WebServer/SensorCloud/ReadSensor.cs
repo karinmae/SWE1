@@ -12,7 +12,7 @@ namespace Interface
 {
     class ReadSensor
     {
-        private string strCon = @"Data Source=.\sqlexpress;" + "Initial Catalog=TempSensor;Integrated Security=true;";
+        private string strCon = @"Data Source=(local);" + "Initial Catalog=TempSensor;Integrated Security=true;";
         private static System.Timers.Timer aTimer;
 
         //Thread zum generieren der Werte

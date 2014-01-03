@@ -51,22 +51,23 @@ namespace WebServer
             if (String.Compare(pluginName, "getTemperature") == 0)
             {
                 sw.WriteLine("<h4>SensorCloud</h4>");
-                sw.WriteLine("<div id='navi'><p>url : {0}</p>", http_url);
-                sw.WriteLine("<form method=post action=/form>");
-                sw.WriteLine("<input type='text' name='date' value='Insert Date'>");
+                sw.WriteLine("<div id='navi'>");
+                sw.WriteLine("<form method=\"post\" action=\"/getTemperature/\">");
+                sw.WriteLine("Day: <input maxlength=\"2\" name=\"day\" size=\"2\" type=\"text\" />");
+                sw.WriteLine("Month: <input maxlength=\"2\" name=\"month\" size=\"2\" type=\"text\" />");
+                sw.WriteLine("Year: <input maxlength=\"4\" name=\"year\" size=\"4\" type=\"text\" />");
                 sw.WriteLine("<input type='submit' value='los'>");
                 sw.WriteLine("</form>");
                 sw.WriteLine("<br><p>Usage: '/day/month/year'</p>");
                 sw.WriteLine("</div></body></html>");
                 sw.Flush();
-
             }
 
 
             else if (String.Compare(pluginName, "StaticFile") == 0)
             {
                 sw.WriteLine("<h4>StaticFile</h4>");
-                sw.WriteLine("<div id='navi'><p>url : {0}</p>", http_url);
+                sw.WriteLine("<div id='navi'>");
                 sw.WriteLine("<br><p>Usage: '/Filename'</p>");
                 sw.WriteLine("</div></body></html>");
                 sw.Flush();
@@ -74,7 +75,7 @@ namespace WebServer
             else if (String.Compare(pluginName, "Navi") == 0)
             {
                 sw.WriteLine("<h4>Navi</h4>");
-                sw.WriteLine("<div id='navi'><p>url : {0}</p>", http_url);
+                sw.WriteLine("<div id='navi'>");
                 sw.WriteLine("<br><p>Not implemented</p>");
                 sw.WriteLine("</div></body></html>");
                 sw.Flush();
@@ -82,7 +83,15 @@ namespace WebServer
             else if (String.Compare(pluginName, "Esoterik") == 0)
             {
                 sw.WriteLine("<h4>Esoterik Plugin</h4>");
-                sw.WriteLine("<div id='navi'><p>url : {0}</p>", http_url);
+                sw.WriteLine("<div id='navi'>");
+                sw.WriteLine("<form method=post action=/form>");
+                sw.WriteLine("First Name: <input maxlength=\"20\" name=\"name\" size=\"20\" type=\"text\" />");
+                sw.WriteLine("Birthyear: <input maxlength=\"4\" name=\"year\" size=\"4\" type=\"text\" />");
+                sw.WriteLine("<br>Gender:<p>");
+			    sw.WriteLine("<input name=\"Gender\" type=\"radio\" value=\"w\" />female</p>");
+		        sw.WriteLine("<p><input name=\"Gender\" type=\"radio\" value=\"m\" />male</p>");
+                sw.WriteLine("<input type='submit' value='los'>");
+                sw.WriteLine("</form>");
                 sw.WriteLine("<br><p>Usage: '/Name/Birthyear/Gender [m/w]'</p>");
                 sw.WriteLine("</div></body></html>");
                 sw.Flush();
