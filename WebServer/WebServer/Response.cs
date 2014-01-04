@@ -52,7 +52,7 @@ namespace WebServer
             {
                 sw.WriteLine("<h4>SensorCloud</h4>");
                 sw.WriteLine("<div id='navi'>");
-                sw.WriteLine("<form method=\"post\" action=\"/getTemperature/\">");
+                sw.WriteLine("<form method=\"POST\" action=\"/getTemperature\">");
                 sw.WriteLine("Day: <input maxlength=\"2\" name=\"day\" size=\"2\" type=\"text\" />");
                 sw.WriteLine("Month: <input maxlength=\"2\" name=\"month\" size=\"2\" type=\"text\" />");
                 sw.WriteLine("Year: <input maxlength=\"4\" name=\"year\" size=\"4\" type=\"text\" />");
