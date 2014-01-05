@@ -17,3 +17,4 @@ C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebLibrary\
 C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebLibrary\obj\Debug\WebLibrary.csprojResolveAssemblyReference.cache
 C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebLibrary\obj\Debug\WebLibrary.dll
 C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\WebLibrary\obj\Debug\WebLibrary.pdb
+C:\git\SWE1\WebServer\WebLibrary\obj\Debug\WebLibrary.csprojResolveAssemblyReference.cache
