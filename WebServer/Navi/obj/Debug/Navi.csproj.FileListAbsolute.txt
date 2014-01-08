@@ -16,3 +16,12 @@ C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\Navi\bin\De
 C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\Navi\obj\Debug\Navi.csprojResolveAssemblyReference.cache
 C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\Navi\obj\Debug\Navi.dll
 C:\Users\Teresa\Documents\Visual Studio 2012\Projects\SWE1\WebServer\Navi\obj\Debug\Navi.pdb
+C:\git\SWE1\WebServer\Navi\bin\Debug\Navi.dll
+C:\git\SWE1\WebServer\Navi\bin\Debug\Navi.pdb
+C:\git\SWE1\WebServer\Navi\bin\Debug\Interface.dll
+C:\git\SWE1\WebServer\Navi\bin\Debug\WebLibrary.dll
+C:\git\SWE1\WebServer\Navi\bin\Debug\Interface.pdb
+C:\git\SWE1\WebServer\Navi\bin\Debug\WebLibrary.pdb
+C:\git\SWE1\WebServer\Navi\obj\Debug\Navi.csprojResolveAssemblyReference.cache
+C:\git\SWE1\WebServer\Navi\obj\Debug\Navi.dll
+C:\git\SWE1\WebServer\Navi\obj\Debug\Navi.pdb

@@ -12,8 +12,10 @@ namespace UnitTest
         {
             String http_url = "favicon.ico";
             bool expected = false;
+
             Request newRequest = new Request(http_url);
             newRequest.handleGETRequest();
+
             bool actual = newRequest.favicon;
             Assert.AreEqual(expected, actual, "Stimmt nicht");
         }

@@ -23,6 +23,12 @@ namespace Interface
             Console.WriteLine("Static Files Plugin loaded");
         }
 
+        //für Unit Test
+        public void set_filename(string File)
+        {
+            filename = File;
+        }
+
         //Byte
         public byte[] ReadAllBytes(string fileName)
         {
@@ -39,18 +45,37 @@ namespace Interface
 
         private void SendFile()
         {
-            //File mittels StreamWriter direkt an den Clienten senden
-            StreamWriter sw = new StreamWriter(stream);
-            string path = @".\files\" + filename;
-            byte[] buffer = ReadAllBytes(path);
+           //File mittels StreamWriter direkt an den Clienten senden
+          //  StreamWriter sw = new StreamWriter(stream);
 
-            sw.WriteLine("HTTP/1.1 200 OK");
-            sw.WriteLine("connection: close");
-           // sw.WriteLine("Content-Type: text/html");
-            sw.WriteLine();
-            sw.Flush();
-            stream.Write(buffer, 0, buffer.Length);
-            stream.Flush();
+            if(File.Exists(@".\files\" + filename))
+            {
+                StreamWriter sw = new StreamWriter(stream);
+                string path = @".\files\" + filename;
+                byte[] buffer = ReadAllBytes(path);
+
+                sw.WriteLine("HTTP/1.1 200 OK");
+                sw.WriteLine("connection: close");
+                // sw.WriteLine("Content-Type: text/html");
+                sw.WriteLine();
+                sw.Flush();
+                stream.Write(buffer, 0, buffer.Length);
+                stream.Flush();
+            }
+            else 
+            {
+                //sw.WriteLine("HTTP/1.1 200 OK");
+                //sw.WriteLine("connection: close");
+                //sw.WriteLine("Content-Type: text/html");
+                //sw.WriteLine();
+                //sw.WriteLine("<h4>StaticFile</h4>");
+                //sw.WriteLine("<div id='navi'>");
+                //sw.WriteLine("<br><p>File doesn't exist!'</p>");
+                //sw.WriteLine("</div></body></html>");
+                //sw.Flush();
+                throw new Exception("File doesn't exits");
+            }
+
         }
 
         public void handleRequest(Url url, NetworkStream clientStream)

@@ -34,6 +34,7 @@ namespace WebServer
             http_method = "GET";
             handleGETRequest();
         }
+
         //~*
 
         //get für URL Objekt
@@ -152,7 +153,7 @@ namespace WebServer
         }
 
         private const int BUF_SIZE = 4096;
-        private void handlePOSTRequest()
+        public void handlePOSTRequest()
         {
             Console.WriteLine("POST");
             int content_len = 0;
@@ -242,7 +243,6 @@ namespace WebServer
             Console.WriteLine("get post data end");
         }
 
-        ////http://stackoverflow.com/questions/7305010/net-handlepostrequest-retrieving-data
 
     }
 }

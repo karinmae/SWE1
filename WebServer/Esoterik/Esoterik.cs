@@ -14,7 +14,9 @@ namespace Esoterik
     public class Esoterik : IPlugin
     {
         private NetworkStream stream;
-        private string strCon = @"Data Source=(local);" + "Initial Catalog=TempSensor; Integrated Security=true;";
+        // private string strCon = @"Data Source=(local);" + "Initial Catalog=TempSensor;Integrated Security=true;";
+        private string strCon = @"Data Source=.\sqlexpress;" + "Initial Catalog=TempSensor;Integrated Security=true;";
+        public int MagicResult;
         public void start()
         {
             Console.WriteLine("Esoterik Plugin loaded");
@@ -28,6 +30,7 @@ namespace Esoterik
             string pluginName = newUrl.getPluginName();
             string[] filenameSplit;
             string MagicName;
+            
 
             if (pluginName == "Esoterik")
             {
@@ -50,9 +53,12 @@ namespace Esoterik
             {
                 MagicNumber += MagicName[i];
             }
-            int MagicResult = MagicNumber % 10;
+            MagicResult = MagicNumber % 10;
             Console.WriteLine("Your Number: {0}", MagicResult);
-            Datenbank(MagicResult);
+            if (stream != null)
+            {
+                Datenbank(MagicResult);
+            }
         }
 
         private void Datenbank(int MagicResult)
@@ -73,7 +79,7 @@ namespace Esoterik
                         // Daten holen
                         sw.WriteLine("HTTP/1.1 200 OK");
                         sw.WriteLine("connection: close");
-                        sw.WriteLine("content-type: text/html");
+                        sw.WriteLine("content-type: text/html; charset=UTF-8");
                         sw.WriteLine();
                         sw.WriteLine("<html><body>");
                         sw.WriteLine("<h3>");

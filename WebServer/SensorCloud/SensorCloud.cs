@@ -22,8 +22,18 @@ namespace Interface
         private Url newUrl = new Url();
         private String pluginName;
         private NetworkStream clientStream;
+        public string Datum;
         //Datenbankverbindung
-        private string strCon = @"Data Source=(local);" + "Initial Catalog=TempSensor; Integrated Security=true;";
+        // private string strCon = @"Data Source=(local);" + "Initial Catalog=TempSensor;Integrated Security=true;";
+        private string strCon = @"Data Source=.\sqlexpress;" + "Initial Catalog=TempSensor;Integrated Security=true;";
+        
+
+        //für Unit Test
+        public void set_Connection(string Con)
+        {
+            strCon = Con;
+        }
+        
         public void start()
         {
             // wirklich viel steht hier ned x_X
@@ -41,8 +51,7 @@ namespace Interface
         public void handleRequest(Url url, NetworkStream stream)
         {
             newUrl = (Url)url;
-           DateTime Date = new DateTime();
-            string Datum;
+            DateTime Date = new DateTime();
             clientStream = stream;
             //if (clientStream == null) throw new ArgumentNullException("stream");
             string[] split = newUrl.getSplitUrl();
@@ -101,7 +110,8 @@ namespace Interface
             }
             catch (Exception)
             {
-                Console.WriteLine("Connection to SensorCloud_DB_Read failed");
+                throw new Exception("Connection to SensorCloud_DB_Read failed");
+                //Console.WriteLine("Connection to SensorCloud_DB_Read failed");
             }
         }
 

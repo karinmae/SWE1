@@ -76,7 +76,11 @@ namespace WebServer
             {
                 sw.WriteLine("<h4>Navi</h4>");
                 sw.WriteLine("<div id='navi'>");
-                sw.WriteLine("<br><p>Not implemented</p>");
+                sw.WriteLine("<form method=post action=/form>");
+                sw.WriteLine("Streetname: <input maxlength=\"30\" name=\"day\" size=\"30\" type=\"text\" />");
+                sw.WriteLine("<input type='submit' value='los'>");
+                sw.WriteLine("</form>");
+                sw.WriteLine("<br><p>Usage: '/streetname'</p>");
                 sw.WriteLine("</div></body></html>");
                 sw.Flush();
             }
