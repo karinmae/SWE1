@@ -149,6 +149,53 @@ namespace WebServer
                     Console.WriteLine("Favicon!");
                     //throw new System.ArgumentException("Favicon!", http_url);
                 }
+            
+        }
+
+        private void handleRequests(string type)
+        {
+            string postname;
+            //PluginNamen raussuchen
+            postname = Convert.ToString(this.httpHeaders["Referer"]);
+            int index = postname.LastIndexOf("/");
+            if (index > 0)
+                postname = postname.Substring(index + 1);
+            theUrl.setPluginName(postname);
+
+            //schneidet alle = und & weg
+            string[] split2 = type.Split(new Char[] { '=', '&' });
+
+            SplitUrl = new string[(split2.Length / 2) + 1];
+            int k = 1;
+            SplitUrl[0] = (string)postname.Clone();
+            //weil wir ja nur die Werte wollen, nehmen wir jedes 2. Element
+            for (int j = 1; j < split2.Length; j += 2)
+            {
+                string tempstring;
+                tempstring = Convert.ToString(split2[j]);
+                SplitUrl[k] = (string)tempstring.Clone();
+                k++;
+            }
+            //und setzen die einzelnen Werte in das URL Objekt
+            theUrl.setSplitUrl(SplitUrl);
+
+            //dann basteln wir eine neue URL
+            StringBuilder builder = new StringBuilder();
+            foreach (string value in SplitUrl)
+            {
+                builder.Append(value);
+                builder.Append('/');
+            }
+            string url = builder.ToString();
+            //setzen die in den String
+            theUrl.setFullUrl(url);
+
+            Console.WriteLine("Got this:");
+
+            foreach (string o in SplitUrl)
+            {
+                Console.WriteLine(o);
+            }
         }
 
         private const int BUF_SIZE = 4096;
@@ -191,51 +238,8 @@ namespace WebServer
 
                     //PARSEN mal wieder T_T
                     string type = Convert.ToString(x_www_form_urlencoded);
-                    string postname;
-                    //PluginNamen raussuchen
-                    //if (this.httpHeaders.ContainsKey("Referer"))
-                    //{
-                        postname = Convert.ToString(this.httpHeaders["Referer"]);
-                        int index = postname.LastIndexOf("/");
-                        if (index > 0)
-                            postname = postname.Substring(index+1);
-                        theUrl.setPluginName(postname);
-                    //}
+                    handleRequests(type);
 
-                    //schneidet alle = und & weg
-                    string[] split2 = type.Split(new Char[] {'=', '&'});
-
-                    SplitUrl = new string[(split2.Length / 2)+1];
-                    int k = 1;
-                    SplitUrl[0] = (string)postname.Clone();
-                    //weil wir ja nur die Werte wollen, nehmen wir jedes 2. Element
-                    for (int j = 1; j < split2.Length; j+=2)
-                    {       
-                        string tempstring;
-                        tempstring = Convert.ToString(split2[j]);
-                        SplitUrl[k] = (string)tempstring.Clone();
-                        k++;
-                    }
-                    //und setzen die einzelnen Werte in das URL Objekt
-                    theUrl.setSplitUrl(SplitUrl);
-
-                    //dann basteln wir eine neue URL
-                    StringBuilder builder = new StringBuilder();
-                    foreach (string value in SplitUrl)
-                    {
-                        builder.Append(value);
-                        builder.Append('/');
-                    }
-                    string url = builder.ToString();
-                    //setzen die in den String
-                    theUrl.setFullUrl(url);
-
-                    Console.WriteLine("Got this:");
-
-                    foreach (string o in SplitUrl)
-                    {
-                        Console.WriteLine(o);
-                    }
                 }
                 ms.Seek(0, SeekOrigin.Begin);
             }
