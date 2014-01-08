@@ -43,19 +43,19 @@ INSERT INTO Esoterik
 VALUES(1,'Feng Hua', 'Ein chinesischer Soldat');
 
 INSERT INTO Esoterik
-VALUES(2,'Paloma Rodriguez', 'Eine spanische Tänzerin');
+VALUES(2,'Paloma Rodriguez', 'Eine spanische Gelehrte');
 
 INSERT INTO Esoterik
 VALUES(3,'Sir Edgar Ravenswood', 'Ein britischer Lord');
 
 INSERT INTO Esoterik
-VALUES(4,'Fei Luang', 'Eine chinesische Söldnerin');
+VALUES(4,'Fei Luang', 'Eine chinesische Soldatin');
 
 INSERT INTO Esoterik
-VALUES(5,'Thorbjörn Gudmunson', 'Ein isländischer Wikinger');
+VALUES(5,'Thorbjorn Gudmunson', 'Ein nordischer Wikinger');
 
 INSERT INTO Esoterik
-VALUES(6,'Halldora Ibensdottir', 'Eine isländische Wikingerfrau');
+VALUES(6,'Halldora Ibensdottir', 'Eine nordische Wikingerfrau');
 
 INSERT INTO Esoterik
 VALUES(7,'Gomez del Bosque', 'Ein spanischer Waldarbeiter');
